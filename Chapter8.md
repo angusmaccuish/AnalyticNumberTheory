@@ -30,10 +30,44 @@ where $m$ and $k$ are fixed integers. The number $e^{2 \pi m/k}$ is a $k$-th roo
 power. Any finite linear combination of such functions, say
 
 $$
-\Sigma_m c(m) e^{2 \pi mn/k}
+\sum_m c(m) e^{2 \pi mn/k}
 $$
 
-is also periodic mod $k$ for every choice of the coefficients $c(m)$.
+is also periodic mod $k$ for every choice of the coefficients $c(m)$. Our first goal is to show that every arithmetical 
+function which is periodic mod $k$ can be expressed as a linear combination of this type. These sums are called *finite 
+Fourier series*. We begin the discussion with a simple but important example known as the *geometric sum*.
+
+**Theorem 8.1** *For fixed $k >= 1$ let*
+
+$$
+g(n) = \sum_{m=0}^{k-1} e^{2 \pi i mn/k}
+$$
+
+*Then*
+
+$$
+g(n) = \begin{cases}
+            0 & k \nmid n \\ 
+            k & k|n 
+       \end{cases}
+$$
+
+PROOF. Since $g(n)$ is the sum of terms in a geometric progression,
+
+$$
+g(n) = \sum_{m=0}^{k-1} x^m
+$$
+
+where $x = e^{2 \pi i n/k}$, we have
+
+$$
+g(n) = \begin{cases}
+            \frac{x^k-1}{x-1} & x \ne 1 \\ 
+            k                 & x=1 
+       \end{cases}
+$$
+
+But $x^k=1$, and $x=1$ if and only if $k|n$, so the theorem is proved. $\square$
 
 ## 8.2 Existence of finite Fourier series for periodic arithmetical functions
 
