@@ -1,0 +1,1 @@
+pandoc Chapter8.md -o Apostol.epub --webtex
