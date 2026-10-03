@@ -1,1 +1,1 @@
-pandoc Chapter8.md -o Apostol.epub --webtex --metadata title="M829: Analytic Number Theory II"
+pandoc Chapter8.md -o Apostol.epub

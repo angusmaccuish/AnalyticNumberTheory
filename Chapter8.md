@@ -30,7 +30,7 @@ where $m$ and $k$ are fixed integers. The number $e^{2 \pi m/k}$ is a $k$-th roo
 power. Any finite linear combination of such functions, say
 
 $$
-\sum_m c(m) e^{2 \pi mn/k}
+\sum_m c(m) e^{2 \pi  i mn/k}
 $$
 
 is also periodic mod $k$ for every choice of the coefficients $c(m)$. Our first goal is to show that every arithmetical 
@@ -48,7 +48,7 @@ $$
 $$
 g(n) = \begin{cases}
             0 & k \nmid n \\ 
-            k & k|n 
+            k & k \: | \: n 
        \end{cases}
 $$
 
@@ -70,6 +70,86 @@ $$
 But $x^k=1$, and $x=1$ if and only if $k|n$, so the theorem is proved. $\square$
 
 ## 8.2 Existence of finite Fourier series for periodic arithmetical functions
+
+We shall use Lagrange's polynomial interpolation formula to show that every periodic arithmetical function has a finite 
+Fourier expansion.
+
+**Theorem 8.2** Lagrange's interpolation theorem. Let $z_0, z_1, \ldots, z_{k-1}$ be $k$ distinct complex numbers and 
+let $w_0, w_1, \ldots, w_{k-1}$ be $k$ complex numbers which need not be distinct. Then there is a unique polynomial 
+$P(z)$ of degree $\le k-1$ such that
+
+$$
+P(z_m) = w_m, \text{for } m = 0, 1, 2, \ldots, k-1
+$$
+
+PROOF: The required polynomial $P(z)$, called the Lagrange interpolation polynomial, can be constructed explicitly as 
+follows. Let
+
+$$
+A(z) = (z-z_0)(z-z_1) \ldots (z-z_{k-1})
+$$
+
+and let
+
+$$
+A_m(z) = \frac{A(z)}{z-z_m}
+$$
+
+Then $A_m(z)$ is a polynomial of degree $k-1$ with the following properties:
+
+$$
+A_m(z_m) \ne 0, \quad A_m(z_j) = 0 \text{ if } j \ne m
+$$
+
+Hence $A_m(z)/A_m(z_m)$ is a polynomial of degree $k-1$ which vanishes at each $z_j$ for $j \ne m$, and has the value 
+$1$ at $z_m$. Therefore, the linear combination
+
+$$
+P(z) = \sum_{m=0}^{k-1} w_m \frac{A_m(z)}{A_m(z_m)}
+$$
+
+is a polynomial of degree $\le k-1$ with $P(z_j) = w_j$ for each $j$. If there were another such polynomial, say 
+$Q(z)$, the difference $P(z)-Q(z)$ would vanish at $k$ distinct points, hence $P(z) = Q(z)$ since both polynomials have 
+degree $\le k-1$. $\square$
+
+Now we choose the numbers $z_0, z_1, \ldots, z_{k-1}$ to be the $k$-th roots of unity and we obtain:
+
+**Theorem 8.3** Given $k$ complex numbers $w_0, w_1, \ldots, w_{k-1}$, there exist k uniquely determined complex 
+numbers  $a_0, a_1, \ldots, a_{k-1}$ such that
+
+$$
+w_m = \sum_{n=0}^{k-1} a_n e^{2 \pi i mn/k} \tag{1}
+$$
+
+for $m = 0, 1, \ldots, k-1$. Moreover, the coefficients $a_n$ are given by the formula
+
+$$
+a_n = \frac{1}{k} \sum_{m=0}^{k-1} w_m e^{-2 \pi i mn/k} \tag{2}
+$$
+
+PROOF: Let $z_m = e^{2 \pi i m/k}$. The numbers $z_0, z_1, \ldots, z_{k-1}$ are distinct so there is a unique Lagrange 
+polynomial
+
+$$
+P(z) = \sum_{n=0}^{k-1} a_n z^n
+$$
+
+such that $P(z_m) = w_m$ for each $m = 0, 1, \ldots, k-1$. This shows that there are uniquely determined numbers $a_n$ 
+satisfying (1). To deduce the formula (2) for $a_n$ we multiple both sides of (1) by $e^{-2 \pi i mr/k}$, where $m$ and 
+$r$ are non-negative integers less than $k$, and sum on $m$ to get
+
+$$
+\sum_{m=0}^{k-1} w_m e^{-2 \pi i mr/k} = \sum_{n=0}^{k-1} a_n \sum_{m=0}^{k-1} e^{2 \pi i (n-r)m/k}
+$$
+
+By Theorem 8.1, the sum on $m$ is $0$ unless $k \: | \: (n-r)$. But $|n-r| \le k-1$ so $k \: | \: (n-r)$ if, and only 
+if, $n=r$. Therefore the only nonvanishing term on the right occurs when $n=r$ and we find
+
+$$
+\sum_{m=0}^{k-1} w_m e^{-2 \pi i mr/k} = k a_r
+$$
+
+This equation gives us (2). $\square$
 
 ## 8.3 Ramanujan's sum and generalisations
 
