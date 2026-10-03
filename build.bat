@@ -1,1 +1,1 @@
-pandoc Chapter8.md -o Apostol.epub
+pandoc Chapter8.md -o Apostol.epub -t epub3 --math-method=mathml
