@@ -82,7 +82,7 @@ $$
 P(z_m) = w_m, \text{for } m = 0, 1, 2, \ldots, k-1
 $$
 
-PROOF: The required polynomial $P(z)$, called the Lagrange interpolation polynomial, can be constructed explicitly as 
+PROOF. The required polynomial $P(z)$, called the Lagrange interpolation polynomial, can be constructed explicitly as 
 follows. Let
 
 $$
@@ -127,7 +127,7 @@ $$
 a_n = \frac{1}{k} \sum_{m=0}^{k-1} w_m e^{-2 \pi i mn/k} \tag{2}
 $$
 
-PROOF: Let $z_m = e^{2 \pi i m/k}$. The numbers $z_0, z_1, \ldots, z_{k-1}$ are distinct so there is a unique Lagrange 
+PROOF. Let $z_m = e^{2 \pi i m/k}$. The numbers $z_0, z_1, \ldots, z_{k-1}$ are distinct so there is a unique Lagrange 
 polynomial
 
 $$
@@ -150,6 +150,38 @@ $$
 $$
 
 This equation gives us (2). $\square$
+
+**Theorem 8.4** Let $f$ be an arithmetical function which is periodic mod $k$. Then there is a uniquely determined 
+arithmetical function $g$, also periodic mod $k$, such that
+
+$$
+f(n) = \sum_{n=0}^{k-1} g(n) e^{2 \pi i mn/k}
+$$
+
+In fact, $g$ is given by the formula
+
+$$
+g(n) = \frac{1}{k} \sum_{m=0}^{k-1} f(m) e^{-2 \pi i mn/k}
+$$
+
+PROOF. Let $w_m = f(m)$ for $m = 0, 1, \ldots, k-1$ and apply Theorem 8.3 to determine the numbers $a_0, a_1, \ldots, 
+a_{k-1}$. Define the function $g$ by the relations $g(m) = a_m$ for $m = 0, 1, \ldots, k-1$ and extend the definition
+of $g(m)$ to all integers $m$ by periodicity mod $k$. Then $f$ is related to $g$ by the equations in the theorem.
+$\square$
+
+*Note.* Since both $f$ and $g$ are periodic mod $k$, we can rewrite the sums in Theorem 8.4 as follows:
+
+$$
+f(m) = \sum_{n \: \text{mod} \; k} g(n) e^{2 \pi i mn/k} \tag{3}
+$$
+
+and
+$$
+g(n) = \frac{1}{k} \sum_{m \: \text{mod} \; k} f(m) e^{-2 \pi i mn/k} \tag{4}
+$$
+
+In each case the summation can be extended over any complete residue system modulo $k$. The sum in (3) is called the
+*finite Fourier expansion* of $f$ and the numbers $g(n)$ defined by (4) are called the *Fourier coefficients* of $f$.
 
 ## 8.3 Ramanujan's sum and generalisations
 
