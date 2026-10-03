@@ -185,15 +185,16 @@ In each case the summation can be extended over any complete residue system modu
 
 ## 8.3 Ramanujan's sum and generalisations
 
-In Exercise 2.14(b) it is shown that the Möbius function $\mu(k)$ is the sum of the primitive $k$-th roots of unity. In
-this section we generalise this result. Specifically, let $n$ be a fixed positive integer and consider the sum of the
-$n$-th powers of the primitive $k$-th roots of unity. This sum is known as *Ramanujan's sum* and is denoted by $c_k$(n):
+In Exercise 2.14(b) it is shown that the M&ouml;bius function $\mu(k)$ is the sum of the primitive $k$-th roots of 
+unity. In this section we generalise this result. Specifically, let $n$ be a fixed positive integer and consider the 
+sum of the $n$-th powers of the primitive $k$-th roots of unity. This sum is known as *Ramanujan's sum* and is denoted 
+by $c_k$(n):
 
 $$
 c_k(n) = \sum_{\substack{m \text{ mod } k \\ (m,k) = 1}} e^{2 \pi i mn/k}
 $$
 
-We have already noted that this sum reduces to the Möbius function when $n=1$,
+We have already noted that this sum reduces to the M&ouml;bius function when $n=1$,
 
 $$
 \mu(k) = c_k(1)
@@ -280,7 +281,7 @@ $$
 c_k(n) = \sum_{d|(n,k)} d \, \mu\Big(\frac{k}{d}\Big)
 $$
 
-PROOF: Taking $f(k)=k$ and $g(k)=\mu(k)$ in Theorem 8.5 we find
+PROOF. Taking $f(k)=k$ and $g(k)=\mu(k)$ in Theorem 8.5 we find
 
 $$
 \sum_{d|(n,k)} d \, \mu\Big(\frac{k}{d}\Big) = \sum_{m \text{ mod } k} a_k(m) e^{2 \pi i mn/k}
@@ -309,6 +310,90 @@ $$
 Out of scope
 
 ## 8.5 Gauss sums associated with Dirichlet characters
+
+**Definition** For any Dirichlet character $\chi$ mod $k$ the sum
+
+$$
+G(n,\chi) = \sum_{m=1}^k \chi(m) e^{2 \pi i mn/k} 
+$$
+
+is called the Gauss sum associated with $\chi$.
+
+If $\chi=\chi_1$, the principal character mod $k$, we have $\chi_1(m)=1$ if $(m,k)=1$, and $\chi_1(m)=0$ otherwise. In 
+this case the Gauss sum reduces to Ramanajan's sum:
+
+$$
+G(n,\chi_1) = \sum_{\substack{m=1 \\ (m,k)=1}}^k e^{2 \pi i mn/k}
+$$
+
+Thus, the Gauss sums $G(n,\chi)$ can be regarded as generalisations of Ramanujan's sum. We turn now to a detailed study 
+of their properties.
+
+The first result is a factorisation property which plays an important role in the subsequent development.
+
+**Theorem 8.9** If $\chi$ is any Dirichlet character mod $k$ then
+
+$$
+G(n,\chi) = \bar\chi(n)G(1,\chi) \text{ whenever } (n,k)=1
+$$
+
+PROOF. When $(n,k)=1$ and the numbers $nr$ run through a complete residue system mod $k$ with $r$. Also
+$|\chi(n)|^2 = \chi(n) \bar\chi(n) = 1$ so
+
+$$
+\chi(r) = \bar\chi(n) \chi(n) \chi(r) = \bar\chi(n) \chi(nr)
+$$
+
+Therefore the sum defining $G(n,\chi)$ can be written as follows:
+
+$$
+\begin{align*}
+G(n,\chi) 
+&= \sum_{r \text{ mod } k} \chi(r) e^{2 \pi i nr/k} 
+= \bar\chi(n) \sum_{r \text{ mod } k} \chi(nr) e^{2 \pi i nr/k} \\
+&= \bar\chi(n) \sum_{m \text{ mod } k} \chi(m) e^{2 \pi i m/k} = \bar\chi(n) G(1,\chi)
+\end{align*}
+$$
+
+This proves the theorem. $\square$
+
+**Definition** The Gauss sum $G(n,\chi)$ is said to be separable if 
+
+$$
+G(n,\chi) = \bar\chi(n) G(1,\chi) \tag{12}
+$$
+
+Theorem 8.9 tells us that $G(n,\chi)$ is separable whenever $n$ is relatively prime to the modulus $k$. For those 
+integers $n$ not relatively prime to $k$ we have the following theorem.
+
+**Theorem 8.10** If $\chi$ is a character mod $k$ the Gauss sum $G(n,\chi)$ is separable for every $n$ if, and only if, 
+
+$$
+G(n,\chi) = 0 \text{ whenever } (n,k) > 1
+$$
+
+PROOF. Separability always hold if $(n,k)=1$. But if $(n,k) \gt 1$ we have $\bar\chi(n)=0$ so Equation (12) holds if 
+and only if $G(n,\chi)=0$.
+
+The next theorem gives an important consequence of separability.
+
+**Theorem 8.11** if $G(n,\chi)$ is separable for every $n$ then
+
+$$
+|G(1,\chi)|^2 = k \tag{13}
+$$
+
+PROOF. We have
+
+$$
+\begin{align*}
+|G(1,\chi)|^2 &= G(1,\chi)\overline{G(1,\chi)} = G(1,\chi) \sum_{m=1}^k \bar\chi(m) e^{-2 \pi i m/k}             \\
+&= \sum_{m=1}^k G(m,\chi) e^{-2 \pi i m/k} = \sum_{m=1}^k \sum_{r=1}^k \chi(r) e^{2 \pi i mr/k} e^{-2 \pi i m/k} \\
+&= \sum_{r=1}^k \chi(r) \sum_{m=1}^k e^{2 \pi i m(r-1)/k} = k\chi(1) = k
+\end{align*}
+$$
+
+since the last sum over $m$ is a geometric sum which vanishes unless $r=1$. $\square$
 
 ## 8.6 Dirichlet characters and nonvanishing Gauss sums
 
