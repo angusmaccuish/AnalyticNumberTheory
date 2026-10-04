@@ -397,6 +397,47 @@ since the last sum over $m$ is a geometric sum which vanishes unless $r=1$. $\sq
 
 ## 8.6 Dirichlet characters and nonvanishing Gauss sums
 
+For every character $\chi$ mod $k$ we have seen that $G(n,\chi)$ is separable if $(n,k)=1$, and that the separability of 
+$G(n,\chi)$ is equivalent to the vanishing of $G(n,\chi)$ for $(n,k) \gt 1$. Now we describe the further properties of 
+those characters such that $G(n,\chi)=0$ whenever $(n,k) \gt 1$. Actually, is it simpler to study the complementary 
+set. The next theorem gives a necessary condition for $G(n,\chi)$ to be nonzero for $(n,k) \gt 1$.
+
+**Theorem 8.12** Let $\chi$ be a Dirichlet character mod $k$ and assume that $G(n,\chi) \ne 0$ for some $n$ satisfying
+$(n,k) \gt 1$. Then there exists a divisor $d$ of $k$, $d \lt k$, such that
+
+$$
+\chi(a) = 1 \text{ whenever } (a,k)=1 \text{ and } a \equiv 1 \pmod{d} \tag{14}
+$$
+
+PROOF. For the given $n$, let $q=(n,k)$ and let $d=k/q$. Then $d|k$ and, since $q \gt 1$, we have $d \lt k$. Choose any 
+$a$ satisfying $(a,k)=1$ and let $a \equiv 1 \pmod{d}$. We will prove that $\chi(a)=1$.
+
+Since $(a,k)=1$, in the sum defining $G(n,\chi)$ we can replace the index of summation $m$ by $am$ and we find
+
+$$
+\begin{align*}
+G(n,\chi) &= \sum_{m \text{ mod } k} \chi(m) e^{2 \pi i nm/k} = \sum_{m \text{ mod } k} \chi(am) e^{2 \pi i nam/k}\\
+          &= \chi(a) \sum_{m \text{ mod } k} \chi(m) e^{2 \pi i nam/k}
+\end{align*}
+$$
+
+Since $a \equiv 1 \pmod{d}$ and $d=k/q$ we can write $a=1+(bk/q)$ for some integer $b$, and we have
+
+$$
+\frac{anm}{k} = \frac{nm}{k} + \frac{bknm}{qk} = \frac{nm}{k} + \frac{bnm}{q} \equiv \frac{nm}{k} \pmod{1}
+$$
+
+since $q|n$. Hence $e^{2 \pi i nam/k}=e^{2 \pi i nm/k}$ and the sum for $G(n,\chi)$ becomes
+
+$$
+G(n,\chi) = \chi(a) \sum_{m \text{ mod } k} \chi(m) e^{2 \pi i nm/k} = \chi(a) G(n,\chi)
+$$
+
+Since $G(n,\chi) \ne 0$ this implies $\chi(a)=1$, as asserted. $\square$
+
+The foregoing theorem leads us to consider those characters $\chi$ mod $k$ for which there is a divisor $d \lt k$ 
+satisfying (14). These are treated next.
+
 ## 8.7 Induced moduli and primitive characters
 
 ## 8.8 Further properties of induced moduli
