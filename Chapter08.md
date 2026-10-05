@@ -597,6 +597,33 @@ If $(n,k) \gt 1$, then $\chi(n)=\chi_1(n)=0$ and both members of (17)  are $0$. 
 
 ## 8.9 The conductor of a character
 
+**Definition** Let $\chi$ be a Dirichlet character mod $k$. The smallest induced modulus $d$ for $\chi$ is called the 
+conductor of $\chi$.
+
+**Theorem 8.18** Every Dirichlet character $\chi$ mod $k$ can be expressed as a product,
+
+$$
+\chi(n) = \psi(n)\chi_1(n) \text{ for all } n \tag{18}
+$$
+
+where $\chi_1$ is the principal character mod $k$ and $\psi$ is a primitive character modulo the conductor of $\chi$.
+
+PROOF. Let $d$ be the conductor of $\chi$. From Theorem 8.17 we know that $\chi$ can be expressed as a product of the 
+form (18), where $\psi$ is a character mod $d$. Now we shall prove that $\psi$ is primitive mod $d$.
+
+We assume that $\psi$ is not primitive mod $d$ and arrive at a contradiction. If $\psi$ is not primitive mod $d$ there 
+is a divisor $q$ of $d$, $q \lt d$, which is an induced modulus for $\psi$. We shall prove that this $q$, which divides 
+$k$, is also an induced modulus for $\chi$, contradicting the fact that $d$ is the smallest induced modulus for $\chi$.
+
+Choose $n \equiv 1 \pmod{q}$, $(n,k)=1$. Then 
+
+$$
+\chi(n) = \psi(n)\chi_1(n) = \psi(n) = 1
+$$
+
+because $q$ is an induced modulus for $\psi$. Hence $q$ is also an induced modulus for $\chi$  and this is a 
+contradiction. $\square$
+
 ## 8.10 Primitive characters and separable Gauss sums
 
 ## 8.11 The finite Fourier series of the Dirichlet characters
