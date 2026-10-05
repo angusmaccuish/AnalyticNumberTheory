@@ -545,6 +545,56 @@ EXAMPLE 2 Now we examine one of the characters $\chi$ modulo $6$:
 In this case the number $3$ is an induced modulus because $\chi(n)=1$ for all $n \equiv 1 \pmod{3}$ with $(n,6)=1$.
 (There is only one such $n$, namely, $n=1$.)
 
+However, $\chi$ is *not* an extension of any character $\psi$ modulo $3$, because the only characters modulo $3$ are 
+the principal character $\psi_1$, given by the table:
+
+| n           | 1 | 2 | 3 |
+| ----------- | - | - | - |
+| $\psi_1(n)$ | 1 | 1 | 0 |
+
+and the character $\psi$ shown in Example 1. Since $\chi(2)=0$ it cannot be an extension of either $\psi$ or $\psi_1$.
+
+These examples shed light on the next theorem.
+
+**Theorem 8.17** Let $\chi$ be a Dirichlet character modulo $k$ and assume $d|k$, $d \gt 0$. Then the following two 
+statements are equivalent:
+- (a) $d$ is an induced modulus for $\chi$.
+- (b) There is a character $\psi$ modulo $d$ such that $$\chi(n) = \psi(n)\chi_1(n) \text{ for all } n \tag{17}$$ 
+      where $\chi_1$ is the principal character modulo $k$.
+
+PROOF. Assume (b) holds. Choose $n$ satisfying $(n,k)=1$, $n \equiv 1 \pmod{d}$. Then $\chi_1(n)=\psi(n)=1$ so 
+$\chi(n)=1$ and hence $d$ is an induced modulus. Thus, (b) implies (a).
+
+Now assume (a) holds. We will exhibit a character $\psi$ modulo $d$ for which (17) holds. We define $\psi(n)$ as 
+follows: if $(n,d) \gt 1$, let $\psi(n)=0$. In this case we also have $(n,k) \gt 1$ so (17) holds because both members 
+are zero.
+
+Now suppose $(n,d)=1$. Then there exists an integer $m$ such that $m \equiv n \pmod{d}$, $(m,k)=1$. This can be proved 
+immediately with Dirichlet's theorem. The arithmetic progression $xd+n$ contains infinitely many primes. We choose one 
+that does not divide $k$ and call this $m$. However, the result is not that deep; the existence of such an $m$ can be 
+easily established without using Dirichlet's theorem. (See Exercise 8.4 for an alternative proof.) Having chosen $m$, 
+which is unique modulo $d$, we define 
+
+$$
+\psi(n) = \chi(m)
+$$
+
+The number $\psi(n)$  is well-defined because $\chi$ takes equal values at numbers which are congruent modulo $d$ and 
+relatively prime to $k$.
+
+The reader can easily verify that $\psi$ is, indeed, a character mod $d$. We shall verify that Equation (17) holds for 
+all $n$.
+
+If $(n,k)=1$ then $(n,d)=1$ so $\psi(n)=\chi(m)$ for some $m \equiv n \pmod{d}$. Hence, by Theorem 8.16, 
+
+$$
+\chi(n) = \chi(m) = \psi(n) = \psi(n)\chi_1(n)
+$$
+
+since $\chi_1(n)=1$.
+
+If $(n,k) \gt 1$, then $\chi(n)=\chi_1(n)=0$ and both members of (17)  are $0$. Thus, (17) holds for all $n$.
+
 ## 8.9 The conductor of a character
 
 ## 8.10 Primitive characters and separable Gauss sums
