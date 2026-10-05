@@ -205,7 +205,7 @@ $\varphi(k)$. Ramanujan showed that $c_k(n)$ is always an integer and that it ha
 properties. He deduced these facts from the relation
 
 $$
-c_k(n) = \sum_{d|(n,k)} d \, \mu\Big(\frac{k}{d}\Big) \tag{5}
+c_k(n) = \sum_{d|(n,k)} d \, \mu\left(\frac{k}{d}\right) \tag{5}
 $$
 
 This formula shows why $c_k(n)$ reduces to both $\mu(k)$ and $\varphi(k)$. In fact, when $n=1$ there is only one term 
@@ -216,7 +216,7 @@ general result (Theorem 8.5).
 Formula (5) for $c_k(n)$ suggests that we study general sums of the form
 
 $$
-\sum_{d|(n,k)} f(d) \, g\Big(\frac{k}{d}\Big) \tag{6}
+\sum_{d|(n,k)} f(d) \, g\left(\frac{k}{d}\right) \tag{6}
 $$
 
 These resemble the sums for the Dirichlet convolution of $f * g$ except that we sum over a *subset* of the divisors of 
@@ -241,7 +241,7 @@ $$
 where
 
 $$
-a_k(m) = \sum_{d|(m,k)} g(d) \, f\Big(\frac{k}{d}\Big) \frac{d}{k} \tag{8}
+a_k(m) = \sum_{d|(m,k)} g(d) \, f\left(\frac{k}{d}\right) \frac{d}{k} \tag{8}
 $$
 
 PROOF. By Theorem 8.4 the coefficients $a_k(m)$ are given by
@@ -249,26 +249,26 @@ PROOF. By Theorem 8.4 the coefficients $a_k(m)$ are given by
 $$
 \begin{align*}
 a_k(m) &= \frac{1}{k} \sum_{n \text{ mod } k} s_k(n) e^{-2 \pi i mn/k} \\
-       &= \frac{1}{k} \sum_{n=1}^k \sum_{\substack{d|n \\ d|k}} f(d) \, g\Big(\frac{k}{d}\Big) e^{-2 \pi i mn/k} \\
+       &= \frac{1}{k} \sum_{n=1}^k \sum_{\substack{d|n \\ d|k}} f(d) \, g\left(\frac{k}{d}\right) e^{-2 \pi i mn/k} \\
 \end{align*}
 $$
 
 Now we write $n=cd$ and note that for each fixed $d$ the index $c$ runs from $1$ to $k/d$ and we obtain
 
 $$
-a_k(m) = \frac{1}{k} \sum_{d|k} f(d) \, g\Big(\frac{k}{d}\Big) \sum_{c=1}^{k/d} e^{-2 \pi i cdm/k}
+a_k(m) = \frac{1}{k} \sum_{d|k} f(d) \, g\left(\frac{k}{d}\right) \sum_{c=1}^{k/d} e^{-2 \pi i cdm/k}
 $$
 
 Now we replace $d$ by $k/d$ in the sum on the right to get
 
 $$
-a_k(m) = \frac{1}{k} \sum_{d|k} f\Big(\frac{k}{d}\Big) \, g(d) \sum_{c=1}^{d} e^{-2 \pi i cm/d}
+a_k(m) = \frac{1}{k} \sum_{d|k} f\left(\frac{k}{d}\right) \, g(d) \sum_{c=1}^{d} e^{-2 \pi i cm/d}
 $$
 
 But by Theorem 8.1 the sum on $c$ is $0$ unless $d|m$ in which case the sum has value $d$. Hence
 
 $$
-a_k(m) = \frac{1}{k} \sum_{\substack{d|k \\ d|m}} f\Big(\frac{k}{d}\Big) \,g(d) \, d
+a_k(m) = \frac{1}{k} \sum_{\substack{d|k \\ d|m}} f\left(\frac{k}{d}\right) \,g(d) \, d
 $$
 
 which proves (8). $\square$
@@ -278,13 +278,13 @@ Now we specialise $f$ and $g$ to obtain the formula for Ramanujan's sum mentione
 **Theorem 8.6** We have
 
 $$
-c_k(n) = \sum_{d|(n,k)} d \, \mu\Big(\frac{k}{d}\Big)
+c_k(n) = \sum_{d|(n,k)} d \, \mu\left(\frac{k}{d}\right)
 $$
 
 PROOF. Taking $f(k)=k$ and $g(k)=\mu(k)$ in Theorem 8.5 we find
 
 $$
-\sum_{d|(n,k)} d \, \mu\Big(\frac{k}{d}\Big) = \sum_{m \text{ mod } k} a_k(m) e^{2 \pi i mn/k}
+\sum_{d|(n,k)} d \, \mu\left(\frac{k}{d}\right) = \sum_{m \text{ mod } k} a_k(m) e^{2 \pi i mn/k}
 $$
 
 where
@@ -300,7 +300,7 @@ $$
 Hence
 
 $$
-\sum_{d|(n,k)} d \, \mu\Big(\frac{k}{d}\Big) 
+\sum_{d|(n,k)} d \, \mu\left(\frac{k}{d}\right) 
 = \sum_{\substack{m \text{ mod } k \\ (m,k)=1}} e^{2 \pi i mn/k} 
 = c_k(n)
 $$
