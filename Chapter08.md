@@ -440,6 +440,57 @@ satisfying (14). These are treated next.
 
 ## 8.7 Induced moduli and primitive characters
 
+**Definition of induced modulus** Let $\chi$ be a Dirichlet character mod $k$ and let $d$ be any positive divisor of 
+$k$. The number $d$ is called an induced modulus for $\chi$ if we have
+
+$$
+\chi(a) = 1 \text{ whenever } (a,k)=1 \text{ and } a \equiv 1 \pmod{d}
+$$
+
+In other words, $d$ is an induced modulus if the character $\chi$ mod $k$ acts like a character mod $d$ on the 
+representatives of the residue class $\hat{1}$ mod $d$ which are relatively prime to $k$. Note that $k$ itself is 
+always an induced modulus for $\chi$.
+
+**Theorem 8.13** Let $\chi$ be a Dirichlet character mod $k$. Then $1$ is an induced modulus for $\chi$ if, and only 
+if, $\chi=\chi_1$.
+
+PROOF. If $\chi=\chi_1$ then $\chi(a)=1$ for all $a$ relatively prime to $k$. But since every $a$ satisfies 
+$a \equiv 1 \pmod{1}$ the number $1$ is an induced modulus.
+
+Conversely, if $1$ is an induced modulus, then $\chi(a)=1$ whenever $(a,k)=1$, so $\chi=\chi_1$ since $\chi$ vanishes 
+on the numbers not prime to $k$. $\square$
+
+For any Dirichlet character mod $k$ the modulus $k$ itself is an induced modulus. If there are no others we call the 
+character *primitive*. That is, we have
+
+**Definition of primitive characters** A Dirichlet character $\chi$ mod $k$ is said to be primitive mod $k$ if it has 
+no induced modulus $d \lt k$. In other words, $\chi$ is primitive mod $k$ if, and only if, for every divisor $d$ of 
+$k$, $0 \lt d \lt k$, there exists an integer $a \equiv 1 \pmod{d}$, $(a,k)=1$, such that $\chi(a) \ne 1$.
+
+If $k \gt 1$ the principal character $\chi_1$ is not primitive since it has $1$ as an induced modulus. Next we show 
+that if the modulus is *prime* every nonprincipal character is primitive.
+
+**Theorem 8.14** Every nonprincipal character $\chi$ modulo a prime $p$ is a primitive character mod $p$.
+
+PROOF. The only divisors of $p$ are $1$ and $p$ so these are the only candidates for induced moduli. But if 
+$\chi \ne \chi_1$ the divisor $1$ is not an induced modulus so $\chi$ has no induced modulus $\lt p$. Hence $\chi$ is 
+primitive.
+
+Now we can restate the results of Theorems 8.10 through 8.12 in the terminology of primitive characters.
+
+**Theorem 8.15** Let $\chi$ be a primitive Dirichlet character mod $k$. Then we have:
+- (a) $G(n,\chi)=0$ for every $n$ with $(n,k) \gt 1$.
+- (b) $G(n,\chi)$ is separable for every $n$.
+- (c) $|G(1,\chi)|^2 =k$.
+
+PROOF. If $G(n,\chi) \ne 0$ for some $n$ with $(n,k) \gt 1$ then Theorem 8.12 shows that $\chi$ has an induced modulus 
+$d \lt k$, so $\chi$ cannot be primitive. This proves (a).
+
+Part (b) follows from (a) and Theorem 8.10. Part (c) follows from part (b) and Theorem 8.11.
+
+*Note.* Theorem 8.15(b) shows that the Gauss sum $G(n,\chi)$ is separable if $\chi$ is primitive. In a later section 
+we prove the converse. That is, if $G(n,\chi)$ is separable for every $n$ then $\chi$ is primitive. (See Theorem 8.19.)
+
 ## 8.8 Further properties of induced moduli
 
 ## 8.9 The conductor of a character
