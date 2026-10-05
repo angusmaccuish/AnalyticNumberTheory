@@ -693,7 +693,7 @@ $$
 where
 
 $$
-\tau_k(\chi) = \frac{G(1,\chi)}{\sqrt{k}} = \frac{1}{\sqrt{k}} \sum_{m=1}^k \chi(m) e^{2 \pi i m/k}
+\tau_k(\chi) = \frac{G(1,\chi)}{\sqrt{k}} = \frac{1}{\sqrt{k}} \sum_{m=1}^k \chi(m) e^{2 \pi i m/k} \tag{22}
 $$
 
 The numbers $\tau_k(\chi)$ have absolute value $1$.
@@ -709,3 +709,105 @@ $$
 which is the same as (21). Theorem 8.11 shows that the numbers $\tau_k(\chi)$ have absolute value $1$. $\square$
 
 ## 8.12 Polya's inequality for the partial sums of primitive characters
+
+The proof of Dirichlet's theorem given in Chapter 7 made use of the relation
+
+$$
+\left| \sum_{m \le x} \chi(m) \right| \le \varphi(k)
+$$
+
+which holds for any Dirichlet character $\chi$ mod $k$ and every real $x \ge 1$. This cannot be improved because when 
+$\chi=\chi_1$ we have $\sum_{m=1}^k \chi_1(m)=\varphi(k)$. However, Polya showed that the inequality can be 
+considerably improved when $\chi$ is a primitive character.
+
+**Theorem 8.21** Polya's inequality. If $\chi$ is any primitive character mod $k$ then for all $x \ge 1$ we have
+
+$$
+\left| \sum_{m \le x} \chi(m) \right| \lt \sqrt{k} \log{k} \tag{23} 
+$$
+
+PROOF. We express $\chi(m)$ by its finite Fourier expansion, as given in Theorem 8.20
+
+$$
+\chi(m) = \frac{\tau_k(\chi}{\sqrt{k}} \sum_{n=1}^k \bar\chi(n) e^{-2 \pi i mn/k}
+$$
+
+and sum over all $m \le x$ to get
+
+$$
+\sum_{m \le x} \chi(m) = \frac{\tau_k(\chi}{\sqrt{k}} \sum_{n=1}^{k-1} \bar\chi(n) \sum_{m \le x} e^{-2 \pi i mn/k}
+$$
+
+since $\chi(k)=0$. Taking absolute values and multiplying by $\sqrt{k}$ we find 
+
+$$
+\sqrt{k} \left| \sum_{m \le x} \chi(m) \right| \le \sum_{n=1}^{k-1} \left| \sum_{m \le x} e^{-2 \pi i mn/k} \right|
+= \sum_{n=1}^{k-1} \left| f(n) \right| \tag{24}
+$$
+
+say, where
+
+$$
+f(n) = \sum_{m \le x} e^{-2 \pi i mn/k}
+$$
+
+Now
+
+$$
+f(k-n) = \sum_{m \le x} e^{-2 \pi i m(k-n)/k} = \sum_{m \le x} e^{2 \pi i mn/k} = \overline{f(n)}
+$$
+
+so $\left| f(k-n) \right| = \left| f(n) \right|$. Hence (24) can be written as
+
+$$
+\sqrt{k} \left| \sum_{m \le x} \chi(m) \right| \le 2 \sum_{n \lt k/2} \left| f(n) \right| + \left| f\left(\frac{k}{2}\right) \right| \tag{25}
+$$
+
+the term $\left| f(k/2) \right|$ appearing only if $k$ is even. But $f(n)$ is a geometric sum, of the form
+
+$$
+f(n) = \sum_{m=1}^r y^m
+$$
+
+where $r=[x]$ and $y=e^{-2 \pi in/k}$. Here $y \ne 1$ since $1 \le n \le k-1$. Writing $z=e^{-\pi i n/k}$, we have 
+$y=z^2$ and $z^2 \ne 1$ since $n \le k/2$. Hence we have
+
+$$
+f(n) = y \frac{y^r-1}{y-1} = z^2 \frac{z^{2r}-1}{z^2-1} = z^{r+1} \frac{z^r-z^{-r}}{z-z^{-1}}
+$$
+
+so
+
+$$
+\left| f(n) \right| = \left| \frac{z^r-z^{-r}}{z-z^{-1}} \right|
+                    = \left| \frac{e^{-\pi i rn/k}-e^{\pi i rn/k}}{e^{-\pi i n/k}-e^{\pi i n/k}} \right|
+                    = \frac{\left| \sin{\frac{\pi rn}{k}} \right|}{\left| \sin{\frac{\pi n}{k}} \right|}
+                    \le \frac{1}{\left| \sin{\frac{\pi n}{k}} \right|} \tag{26}
+$$
+
+Now we use the inequality $\sin{t} \ge 2t/\pi$, valid for $0 \le t \le \pi/2$, with $t=\pi n/k$ to get
+
+$$
+\left| f(n) \right| \le \frac{1}{\frac{2}{\pi} \frac{\pi n}{k}} = \frac{k}{2n}
+$$
+
+If $k$ is odd, (25) becomes 
+
+$$
+\sqrt{k} \left| \sum_{m \le x} \chi(m) \right| \le k \sum_{n \le k/2} \frac{1}{n} \lt k \log{k}
+$$
+
+But if $k$ is even, $\left| f(k/2)) \right| \le 1$, and (25) gives us
+
+$$
+\sqrt{k} \left| \sum_{m \le x} \chi(m) \right| \le k \left\{ \sum_{n \le k/2} \frac{1}{n} + \frac{1}{k} \right\} \lt k \log{k}
+$$
+
+and this proves (23).
+
+*Note.* Polya's inequality can be extended to any nonprincipal character (see Theorem 13.15). For nonprincipal 
+characters it takes the form 
+
+$$
+\sum_{m \le x} \chi(m) = \mathcal{O}\left(\sqrt{k} \log{k}\right)
+$$
