@@ -118,13 +118,13 @@ Now we choose the numbers $z_0, z_1, \ldots, z_{k-1}$ to be the $k$-th roots of 
 numbers  $a_0, a_1, \ldots, a_{k-1}$ such that
 
 $$
-w_m = \sum_{n=0}^{k-1} a_n e^{2 \pi i mn/k} \tag{1}
+w_m = \sum_{n=0}^{k-1} a_n e^{2 \pi i mn/k} \qquad (1)
 $$
 
 for $m = 0, 1, \ldots, k-1$. Moreover, the coefficients $a_n$ are given by the formula
 
 $$
-a_n = \frac{1}{k} \sum_{m=0}^{k-1} w_m e^{-2 \pi i mn/k} \tag{2}
+a_n = \frac{1}{k} \sum_{m=0}^{k-1} w_m e^{-2 \pi i mn/k} \qquad (2)
 $$
 
 PROOF. Let $z_m = e^{2 \pi i m/k}$. The numbers $z_0, z_1, \ldots, z_{k-1}$ are distinct so there is a unique Lagrange 
@@ -172,12 +172,12 @@ $\square$
 *Note.* Since both $f$ and $g$ are periodic mod $k$, we can rewrite the sums in Theorem 8.4 as follows:
 
 $$
-f(m) = \sum_{n \text{ mod } k} g(n) e^{2 \pi i mn/k} \tag{3}
+f(m) = \sum_{n \text{ mod } k} g(n) e^{2 \pi i mn/k} \qquad (3)
 $$
 
 and
 $$
-g(n) = \frac{1}{k} \sum_{m \text{ mod } k} f(m) e^{-2 \pi i mn/k} \tag{4}
+g(n) = \frac{1}{k} \sum_{m \text{ mod } k} f(m) e^{-2 \pi i mn/k} \qquad (4)
 $$
 
 In each case the summation can be extended over any complete residue system modulo $k$. The sum in (3) is called the
@@ -205,7 +205,7 @@ $\varphi(k)$. Ramanujan showed that $c_k(n)$ is always an integer and that it ha
 properties. He deduced these facts from the relation
 
 $$
-c_k(n) = \sum_{d|(n,k)} d \, \mu\left(\frac{k}{d}\right) \tag{5}
+c_k(n) = \sum_{d|(n,k)} d \, \mu\left(\frac{k}{d}\right) \qquad (5)
 $$
 
 This formula shows why $c_k(n)$ reduces to both $\mu(k)$ and $\varphi(k)$. In fact, when $n=1$ there is only one term 
@@ -216,7 +216,7 @@ general result (Theorem 8.5).
 Formula (5) for $c_k(n)$ suggests that we study general sums of the form
 
 $$
-\sum_{d|(n,k)} f(d) \, g\left(\frac{k}{d}\right) \tag{6}
+\sum_{d|(n,k)} f(d) \, g\left(\frac{k}{d}\right) \qquad (6)
 $$
 
 These resemble the sums for the Dirichlet convolution of $f * g$ except that we sum over a *subset* of the divisors of 
@@ -235,13 +235,13 @@ theorem tells us that its Fourier coefficients are given by a sum of the same ty
 expansion
 
 $$
-s_k(n) = \sum_{m \text{ mod } k} a_k(m) e^{2 \pi i mn/k} \tag{7}
+s_k(n) = \sum_{m \text{ mod } k} a_k(m) e^{2 \pi i mn/k} \qquad (7)
 $$
 
 where
 
 $$
-a_k(m) = \sum_{d|(m,k)} g(d) \, f\left(\frac{k}{d}\right) \frac{d}{k} \tag{8}
+a_k(m) = \sum_{d|(m,k)} g(d) \, f\left(\frac{k}{d}\right) \frac{d}{k} \qquad (8)
 $$
 
 PROOF. By Theorem 8.4 the coefficients $a_k(m)$ are given by
@@ -360,7 +360,7 @@ This proves the theorem. $\square$
 **Definition** The Gauss sum $G(n,\chi)$ is said to be separable if 
 
 $$
-G(n,\chi) = \bar\chi(n) G(1,\chi) \tag{12}
+G(n,\chi) = \bar\chi(n) G(1,\chi) \qquad (12)
 $$
 
 Theorem 8.9 tells us that $G(n,\chi)$ is separable whenever $n$ is relatively prime to the modulus $k$. For those 
@@ -380,7 +380,7 @@ The next theorem gives an important consequence of separability.
 **Theorem 8.11** if $G(n,\chi)$ is separable for every $n$ then
 
 $$
-|G(1,\chi)|^2 = k \tag{13}
+|G(1,\chi)|^2 = k \qquad (13)
 $$
 
 PROOF. We have
@@ -406,7 +406,7 @@ set. The next theorem gives a necessary condition for $G(n,\chi)$ to be nonzero 
 $(n,k) \gt 1$. Then there exists a divisor $d$ of $k$, $d \lt k$, such that
 
 $$
-\chi(a) = 1 \text{ whenever } (a,k) = 1 \text{ and } a \equiv 1 \pmod{d} \tag{14}
+\chi(a) = 1 \text{ whenever } (a,k) = 1 \text{ and } a \equiv 1 \pmod{d} \qquad (14)
 $$
 
 PROOF. For the given $n$, let $q=(n,k)$ and let $d=k/q$. Then $d|k$ and, since $q \gt 1$, we have $d \lt k$. Choose any 
@@ -444,7 +444,7 @@ satisfying (14). These are treated next.
 $k$. The number $d$ is called an induced modulus for $\chi$ if we have
 
 $$
-\chi(a) = 1 \text{ whenever } (a,k) = 1 \text{ and } a \equiv 1 \pmod{d} \tag{15}
+\chi(a) = 1 \text{ whenever } (a,k) = 1 \text{ and } a \equiv 1 \pmod{d} \qquad (15)
 $$
 
 In other words, $d$ is an induced modulus if the character $\chi$ mod $k$ acts like a character mod $d$ on the 
@@ -499,7 +499,7 @@ The next theorem refers to the action of $\chi$ on numbers which are congruent m
 modulus for $\chi$ if, and only if,
 
 $$
-\chi(a) = \chi(b) \text{ whenever } (a,k) = (b,k) = 1 \text{ and } a \equiv b \pmod{d} \tag{16}
+\chi(a) = \chi(b) \text{ whenever } (a,k) = (b,k) = 1 \text{ and } a \equiv b \pmod{d} \qquad (16)
 $$
 
 PROOF. If (16) holds then $d$ is an induced modulus since we may choose $b=1$ and refer to Equation (15). Now we prove 
@@ -559,7 +559,7 @@ These examples shed light on the next theorem.
 **Theorem 8.17** Let $\chi$ be a Dirichlet character modulo $k$ and assume $d|k$, $d \gt 0$. Then the following two 
 statements are equivalent:
 - (a) $d$ is an induced modulus for $\chi$.
-- (b) There is a character $\psi$ modulo $d$ such that $$\chi(n) = \psi(n)\chi_1(n) \text{ for all } n \tag{17}$$ 
+- (b) There is a character $\psi$ modulo $d$ such that $$\chi(n) = \psi(n)\chi_1(n) \text{ for all } n \qquad (17)$$ 
       where $\chi_1$ is the principal character modulo $k$.
 
 PROOF. Assume (b) holds. Choose $n$ satisfying $(n,k)=1$, $n \equiv 1 \pmod{d}$. Then $\chi_1(n)=\psi(n)=1$ so 
@@ -603,7 +603,7 @@ conductor of $\chi$.
 **Theorem 8.18** Every Dirichlet character $\chi$ mod $k$ can be expressed as a product,
 
 $$
-\chi(n) = \psi(n)\chi_1(n) \text{ for all } n \tag{18}
+\chi(n) = \psi(n)\chi_1(n) \text{ for all } n \qquad (18)
 $$
 
 where $\chi_1$ is the principal character mod $k$ and $\psi$ is a primitive character modulo the conductor of $\chi$.
@@ -667,7 +667,7 @@ the proof. $\square$
 Since each Dirichlet character $\chi$ mod $k$ is periodic mod $k$ it has a finite Fourier expansion
 
 $$
-\chi(m) = \sum_{n=1}^k a_k(n) e^{2 \pi i mn/k} \tag{19}
+\chi(m) = \sum_{n=1}^k a_k(n) e^{2 \pi i mn/k} \qquad (19)
 $$
 
 and Theorem 8.4 tells us that its coefficients are given by the formula
@@ -679,7 +679,7 @@ $$
 The sum on the right is a Gauss sum $G(-n,\chi$) so we have
 
 $$
-a_k(n) = \frac{1}{k} G(-n,\chi) \tag{20}
+a_k(n) = \frac{1}{k} G(-n,\chi) \qquad (20)
 $$
 
 When $\chi$ is primitive the Fourier expansion (19) can be expressed as follows:
@@ -687,13 +687,13 @@ When $\chi$ is primitive the Fourier expansion (19) can be expressed as follows:
 **Theorem 8.20** The finite Fourier expansion of a primitive Dirichlet character $\chi$ mod $k$ has the form
 
 $$
-\chi(m) = \frac{\tau_k(\chi)}{\sqrt{k}} \sum_{n=1}^k \bar\chi(n) e^{-2 \pi i mn/k} \tag{21}
+\chi(m) = \frac{\tau_k(\chi)}{\sqrt{k}} \sum_{n=1}^k \bar\chi(n) e^{-2 \pi i mn/k} \qquad (21)
 $$
 
 where
 
 $$
-\tau_k(\chi) = \frac{G(1,\chi)}{\sqrt{k}} = \frac{1}{\sqrt{k}} \sum_{m=1}^k \chi(m) e^{2 \pi i m/k} \tag{22}
+\tau_k(\chi) = \frac{G(1,\chi)}{\sqrt{k}} = \frac{1}{\sqrt{k}} \sum_{m=1}^k \chi(m) e^{2 \pi i m/k} \qquad (22)
 $$
 
 The numbers $\tau_k(\chi)$ have absolute value $1$.
@@ -723,7 +723,7 @@ considerably improved when $\chi$ is a primitive character.
 **Theorem 8.21** Polya's inequality. If $\chi$ is any primitive character mod $k$ then for all $x \ge 1$ we have
 
 $$
-\left| \sum_{m \le x} \chi(m) \right| \lt \sqrt{k} \log{k} \tag{23} 
+\left| \sum_{m \le x} \chi(m) \right| \lt \sqrt{k} \log{k} \qquad (23) 
 $$
 
 PROOF. We express $\chi(m)$ by its finite Fourier expansion, as given in Theorem 8.20
@@ -742,7 +742,7 @@ since $\chi(k)=0$. Taking absolute values and multiplying by $\sqrt{k}$ we find
 
 $$
 \sqrt{k} \left| \sum_{m \le x} \chi(m) \right| \le \sum_{n=1}^{k-1} \left| \sum_{m \le x} e^{-2 \pi i mn/k} \right|
-= \sum_{n=1}^{k-1} \left| f(n) \right| \tag{24}
+= \sum_{n=1}^{k-1} \left| f(n) \right| \qquad (24)
 $$
 
 say, where
@@ -760,7 +760,7 @@ $$
 so $\left| f(k-n) \right| = \left| f(n) \right|$. Hence (24) can be written as
 
 $$
-\sqrt{k} \left| \sum_{m \le x} \chi(m) \right| \le 2 \sum_{n \lt k/2} \left| f(n) \right| + \left| f\left(\frac{k}{2}\right) \right| \tag{25}
+\sqrt{k} \left| \sum_{m \le x} \chi(m) \right| \le 2 \sum_{n \lt k/2} \left| f(n) \right| + \left| f\left(\frac{k}{2}\right) \right| \qquad (25)
 $$
 
 the term $\left| f(k/2) \right|$ appearing only if $k$ is even. But $f(n)$ is a geometric sum, of the form
@@ -782,7 +782,7 @@ $$
 \left| f(n) \right| = \left| \frac{z^r-z^{-r}}{z-z^{-1}} \right|
                     = \left| \frac{e^{-\pi i rn/k}-e^{\pi i rn/k}}{e^{-\pi i n/k}-e^{\pi i n/k}} \right|
                     = \frac{\left| \sin{\frac{\pi rn}{k}} \right|}{\left| \sin{\frac{\pi n}{k}} \right|}
-                    \le \frac{1}{\left| \sin{\frac{\pi n}{k}} \right|} \tag{26}
+                    \le \frac{1}{\left| \sin{\frac{\pi n}{k}} \right|} \qquad (26)
 $$
 
 Now we use the inequality $\sin{t} \ge 2t/\pi$, valid for $0 \le t \le \pi/2$, with $t=\pi n/k$ to get
