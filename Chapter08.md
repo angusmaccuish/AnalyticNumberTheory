@@ -664,4 +664,48 @@ the proof. $\square$
 
 ## 8.11 The finite Fourier series of the Dirichlet characters
 
+Since each Dirichlet character $\chi$ mod $k$ is periodic mod $k$ it has a finite Fourier expansion
+
+$$
+\chi(m) = \sum_{n=1}^k a_k(n) e^{2 \pi i mn/k} \tag{19}
+$$
+
+and Theorem 8.4 tells us that its coefficients are given by the formula
+
+$$
+a_k(n) = \frac{1}{k} \sum_{m=1}^k \chi(m) e^{-2 \pi i mn/k}
+$$
+
+The sum on the right is a Gauss sum $G(-n,\chi$) so we have
+
+$$
+a_k(n) = \frac{1}{k} G(-n,\chi) \tag{20}
+$$
+
+When $\chi$ is primitive the Fourier expansion (19) can be expressed as follows:
+
+**Theorem 8.20** The finite Fourier expansion of a primitive Dirichlet character $\chi$ mod $k$ has the form
+
+$$
+\chi(m) = \frac{\tau_k(\chi)}{\sqrt{k}} \sum_{n=1}^k \bar\chi(n) e^{-2 \pi i mn/k} \tag{21}
+$$
+
+where
+
+$$
+\tau_k(\chi) = \frac{G(1,\chi)}{\sqrt{k}} = \frac{1}{\sqrt{k}} \sum_{m=1}^k \chi(m) e^{2 \pi i m/k}
+$$
+
+The numbers $\tau_k(\chi)$ have absolute value $1$.
+
+PROOF. Since $\chi$ is primitive we have $G(-n,\chi)=\bar\chi(-n)G(1,\chi)$ and (20) implies 
+$a_k(n)=\bar\chi(-n)G(1,\chi)/k$. Therefore (19) can be written as
+
+$$
+\chi(m) = \frac{G(1,\chi)}{k} \sum_{n=1}^k \bar\chi(-n) e^{2 \pi i mn/k}
+        = \frac{G(1,\chi)}{k} \sum_{n=1}^k \bar\chi(n) e^{-2 \pi i mn/k}
+$$
+
+which is the same as (21). Theorem 8.11 shows that the numbers $\tau_k(\chi)$ have absolute value $1$. $\square$
+
 ## 8.12 Polya's inequality for the partial sums of primitive characters
