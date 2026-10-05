@@ -63,7 +63,7 @@ where $x = e^{2 \pi i n/k}$, we have
 $$
 g(n) = \begin{cases}
             \frac{x^k-1}{x-1} & \text{ if } x \ne 1 \\ 
-            k                 & \text{ if } x=1 
+            k                 & \text{ if } x = 1 
        \end{cases}
 $$
 
@@ -292,7 +292,7 @@ where
 $$
 a_k(m) = \sum_{d|(m,k)} \mu(d) \Big[\frac{1}{(m,k)}\Big] = 
 \begin{cases}
-1 & \text{ if } (m,k)=1 \\
+1 & \text{ if } (m,k) = 1 \\
 0 & \text{ if } (m,k) \gt 1
 \end{cases}                                                          
 $$
@@ -334,7 +334,7 @@ The first result is a factorisation property which plays an important role in th
 **Theorem 8.9** If $\chi$ is any Dirichlet character mod $k$ then
 
 $$
-G(n,\chi) = \bar\chi(n)G(1,\chi) \text{ whenever } (n,k)=1
+G(n,\chi) = \bar\chi(n)G(1,\chi) \text{ whenever } (n,k) = 1
 $$
 
 PROOF. When $(n,k)=1$ and the numbers $nr$ run through a complete residue system mod $k$ with $r$. Also
@@ -406,7 +406,7 @@ set. The next theorem gives a necessary condition for $G(n,\chi)$ to be nonzero 
 $(n,k) \gt 1$. Then there exists a divisor $d$ of $k$, $d \lt k$, such that
 
 $$
-\chi(a) = 1 \text{ whenever } (a,k)=1 \text{ and } a \equiv 1 \pmod{d} \tag{14}
+\chi(a) = 1 \text{ whenever } (a,k) = 1 \text{ and } a \equiv 1 \pmod{d} \tag{14}
 $$
 
 PROOF. For the given $n$, let $q=(n,k)$ and let $d=k/q$. Then $d|k$ and, since $q \gt 1$, we have $d \lt k$. Choose any 
@@ -444,7 +444,7 @@ satisfying (14). These are treated next.
 $k$. The number $d$ is called an induced modulus for $\chi$ if we have
 
 $$
-\chi(a) = 1 \text{ whenever } (a,k)=1 \text{ and } a \equiv 1 \pmod{d}
+\chi(a) = 1 \text{ whenever } (a,k) = 1 \text{ and } a \equiv 1 \pmod{d} \tag{15}
 $$
 
 In other words, $d$ is an induced modulus if the character $\chi$ mod $k$ acts like a character mod $d$ on the 
@@ -492,6 +492,58 @@ Part (b) follows from (a) and Theorem 8.10. Part (c) follows from part (b) and T
 we prove the converse. That is, if $G(n,\chi)$ is separable for every $n$ then $\chi$ is primitive. (See Theorem 8.19.)
 
 ## 8.8 Further properties of induced moduli
+
+The next theorem refers to the action of $\chi$ on numbers which are congruent modulo an induced modulus.
+
+**Theorem 8.16** Let $\chi$ be a Dirichlet character mod $k$ and assume $d|k$, $d \gt 0$. Then $d$ is an induced 
+modulus for $\chi$ if, and only if,
+
+$$
+\chi(a) = \chi(b) \text{ whenever } (a,k) = (b,k) = 1 \text{ and } a \equiv b \pmod{d} \tag{16}
+$$
+
+PROOF. If (16) holds then $d$ is an induced modulus since we may choose $b=1$ and refer to Equation (15). Now we prove 
+the converse.
+
+Choose $a$ and $b$ so that $(a,k)=(b,k)=1$ and $a \equiv b \pmod{d}$. We will show that $\chi(a)=\chi(b)$. Let $a'$ be 
+the reciprocal of $a$ mod $k$, $aa' \equiv 1 \pmod{k}$. The reciprocal exists because $(a,k)=1$. Now 
+$aa' \equiv 1 \pmod{d}$ since $d|k$. Hence $\chi(aa')=1$ since $d$ is an induced modulus. But 
+$aa' \equiv ba' \equiv 1 \pmod{d}$ because $a \equiv b \pmod{d}$, hence $\chi(aa')=\chi(ba')$, so
+
+$$
+\chi(a)\chi(a') = \chi(b)\chi(a')
+$$
+
+But $\chi(a') \ne 0$ since $\chi(a)\chi(a')=1$. Cancelling $\chi(a')$ we find $\chi(a)=\chi(b)$, and this completes the 
+proof. $\square$
+
+Equation (16) tells us that $\chi$ is periodic mod $d$ on those integers relatively prime to $k$. Thus $\chi$ acts very 
+much like a character mod $d$. To further explore this relation it is worthwhile to consider a few examples.
+
+EXAMPLE 1 The following table describes one of the characters $\chi$ mod $9$.
+
+| n         | 1 | 2  | 3 | 4 | 5  | 6 | 7 | 8  | 9 |
+| --------- | - | -- | - | - | -- | - | - | -- | - |
+| $\chi(n)$ | 1 | -1 | 0 | 1 | -1 | 0 | 1 | -1 | 0 | 
+
+We note that this table is periodic modulo $3$ so $3$ is an induced modulus for $\chi$. In fact, $\chi$ acts like the 
+following character $\psi$ modulo $3$:
+
+| n         | 1 | 2  | 3 |
+| --------- | - | -- | - |
+| $\psi(n)$ | 1 | -1 | 0 |
+
+Since $\chi(n)=\psi(n)$ for all $n$ we call $\chi$ an *extension* of $\psi$. It is clear that whenever $\chi$ is an 
+extension of a character $\psi$ modulo $d$ then $d$ will be an induced modulus for $\chi$.
+
+EXAMPLE 2 Now we examine one of the characters $\chi$ modulo $6$:
+
+| n         | 1 | 2 | 3 | 4 | 5  | 6 |
+| --------- | - | - | - | - | -- | - |
+| $\chi(n)$ | 1 | 0 | 0 | 0 | -1 | 0 | 
+
+In this case the number $3$ is an induced modulus because $\chi(n)=1$ for all $n \equiv 1 \pmod{3}$ with $(n,6)=1$.
+(There is only one such $n$, namely, $n=1$.)
 
 ## 8.9 The conductor of a character
 
