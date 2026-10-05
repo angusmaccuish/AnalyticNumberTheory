@@ -626,6 +626,42 @@ contradiction. $\square$
 
 ## 8.10 Primitive characters and separable Gauss sums
 
+As an application of the foregoing theorems we give the following alternate description of primitive characters.
+
+**Theorem 8.19** Let $\chi$ be a character mod $k$. Then $\chi$ is primitive mod $k$ if, and only if, the Gauss sum
+
+$$
+G(n,\chi) = \sum_{m \text{ mod } k} \chi(m) e^{2 \pi i mn/k}
+$$
+
+is separable for every $n$.
+
+PROOF. If $\chi$ is primitive, then $G(n,\chi)$ is separable by Theorem 8.15(b). Now we prove the converse.
+
+Because of Theorems 8.9 and 8.10 it suffices to prove that if $\chi$ is not primitive mod $k$ then for some $r$ 
+satisfying $(r,k) \gt 1$ we have $G(r,\chi) \ne 0$. Suppose, then, that $\chi$ is not primitive mod $k$. This implies 
+$k \gt 1$. Then $\chi$ has a conductor $d \lt k$. Let $r=k/d$. Then $(r,k) \gt 1$ and we shall prove that 
+$G(r,\chi) \ne 0$ for this $r$. By Theorem 8.18 there exists a primitive character $\psi$ mod $d$ such that 
+$\chi(n)=\psi(n)\chi_1(n)$ for all $n$. Hence we can write
+
+$$
+\begin{align*}
+G(r,\chi) &= \sum_{m \text{ mod } k} \psi(m) \chi_1(m) e^{2 \pi i rm/k}
+           = \sum_{\substack{m \text{ mod } k \\ (m,k)=1}} \psi(m) e^{2 \pi i rm/k} \\
+          &= \sum_{\substack{m \text{ mod } k \\ (m,k)=1}} \psi(m) e^{2 \pi i m/d}
+           = \frac{\varphi(k)}{\varphi(d)} \sum_{\substack{m \text{ mod } d \\ (m,d)=1}} \psi(m) e^{2 \pi i m/d}
+\end{align*}
+$$
+
+where in the last step we used Theorem 5.33(a). Therefore we have
+
+$$
+G(r,\chi) = \frac{\varphi(k)}{\varphi(d)} G(1,\psi)
+$$
+
+But $|G(1,\psi)|^2=d$ by Theorem 8.15 (since $\psi$ is primitive mod $d$) and hence $G(r,\chi) \ne 0$. This completes 
+the proof. $\square$
+
 ## 8.11 The finite Fourier series of the Dirichlet characters
 
 ## 8.12 Polya's inequality for the partial sums of primitive characters
