@@ -522,25 +522,25 @@ much like a character mod $d$. To further explore this relation it is worthwhile
 
 EXAMPLE 1 The following table describes one of the characters $\chi$ mod $9$.
 
-| n         | 1 | 2  | 3 | 4 | 5  | 6 | 7 | 8  | 9 |
-| --------- | - | -- | - | - | -- | - | - | -- | - |
-| $\chi(n)$ | 1 | -1 | 0 | 1 | -1 | 0 | 1 | -1 | 0 | 
+| n         | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  |
+| :-------- | :- | :- | :- | :- | :- | :- | :- | :- | :- |
+| $\chi(n)$ | 1  | -1 | 0  | 1  | -1 | 0  | 1  | -1 | 0  | 
 
 We note that this table is periodic modulo $3$ so $3$ is an induced modulus for $\chi$. In fact, $\chi$ acts like the 
 following character $\psi$ modulo $3$:
 
-| n         | 1 | 2  | 3 |
-| --------- | - | -- | - |
-| $\psi(n)$ | 1 | -1 | 0 |
+| n         | 1  | 2  | 3  |
+| :-------- | :- | :- | :- |
+| $\psi(n)$ | 1  | -1 | 0  |
 
 Since $\chi(n)=\psi(n)$ for all $n$ we call $\chi$ an *extension* of $\psi$. It is clear that whenever $\chi$ is an 
 extension of a character $\psi$ modulo $d$ then $d$ will be an induced modulus for $\chi$.
 
 EXAMPLE 2 Now we examine one of the characters $\chi$ modulo $6$:
 
-| n         | 1 | 2 | 3 | 4 | 5  | 6 |
-| --------- | - | - | - | - | -- | - |
-| $\chi(n)$ | 1 | 0 | 0 | 0 | -1 | 0 | 
+| n         | 1  | 2  | 3  | 4  | 5  | 6  |
+| :-------- | :- | :- | :- | :- | :- | :- |
+| $\chi(n)$ | 1  | 0  | 0  | 0  | -1 | 0  | 
 
 In this case the number $3$ is an induced modulus because $\chi(n)=1$ for all $n \equiv 1 \pmod{3}$ with $(n,6)=1$.
 (There is only one such $n$, namely, $n=1$.)
@@ -548,9 +548,9 @@ In this case the number $3$ is an induced modulus because $\chi(n)=1$ for all $n
 However, $\chi$ is *not* an extension of any character $\psi$ modulo $3$, because the only characters modulo $3$ are 
 the principal character $\psi_1$, given by the table:
 
-| n           | 1 | 2 | 3 |
-| ----------- | - | - | - |
-| $\psi_1(n)$ | 1 | 1 | 0 |
+| n           | 1  | 2  | 3  |
+| :---------- | :- | :- | :- |
+| $\psi_1(n)$ | 1  | 1  | 0  |
 
 and the character $\psi$ shown in Example 1. Since $\chi(2)=0$ it cannot be an extension of either $\psi$ or $\psi_1$.
 
