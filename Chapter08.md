@@ -26,7 +26,7 @@ $$
 f(n) = e^{2 \pi i mn/k}
 $$
 
-where $m$ and $k$ are fixed integers. The number $e^{2 \pi m/k}$ is a $k$-th root of unity and $f(n)$ is its $n$th 
+where $m$ and $k$ are fixed integers. The number $e^{2 \pi im/k}$ is a $k$-th root of unity and $f(n)$ is its $n$th 
 power. Any finite linear combination of such functions, say
 
 $$
@@ -290,7 +290,7 @@ $$
 where
 
 $$
-a_k(m) = \sum_{d|(m,k)} \mu(d) \Big[\frac{1}{(m,k)}\Big] = 
+a_k(m) = \sum_{d|(m,k)} \mu(d) \left[ \frac{1}{(m,k)} \right] = 
 \begin{cases}
 1 & \text{ if } (m,k) = 1 \\
 0 & \text{ if } (m,k) \gt 1
