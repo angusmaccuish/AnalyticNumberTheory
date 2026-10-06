@@ -79,6 +79,32 @@ The following brief table of quadratic residues $R$ and nonresidues $\bar{R}$ wa
 
 ## 9.2 Legendre's symbol and its properties
 
+**Definition** Let $p$ be an odd prime. If $n \not\equiv 0 \pmod{p}$ we define Legendre's symbol $(n|p)$ as follows:
+
+$$
+(n|p) = \begin{cases}
+        +1 \text{ if } nRp \\
+        -1 \text{ if } n\bar{R}p
+        \end{cases}
+$$
+
+If $n \equiv 0 \pmod{p}$ we define $(n|p)=0$.
+
+EXAMPLES. $(1|p)=1$, $(m^2|p)=1$, $(7|11)=-1$, $(22|11)=0$.
+
+*Note.* Some authors write $\left(\frac{n}{p}\right)$ instead of $(n|p)$.
+
+It is clear that $(m|p)=(n|p)$ whenever $m \equiv n \pmod{p}$, so $(n|p)$ is a periodic function of $n$ with period $p$.
+
+The little Fermat theorem tells us that $n^{p-1} \equiv 1 \pmod{p}$ if $p \nmid n$. Since
+
+$$
+n^{p-1}-1 = (n^{(p-1)/2} - 1)(n^{(p-1)/2} + 1)
+$$
+
+it follows that $n^{(p-1)/2} \equiv \pm{1} \pmod{p}$. The next theorem tells us that we get $+1$ if $nRp$ and $-1$ if 
+$n\bar{R}p$.
+
 ## 9.3 Evaluation of $(-1|p)$ and $(2|p)$
 
 ## 9.4 Gauss' lemma
