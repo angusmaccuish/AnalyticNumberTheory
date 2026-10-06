@@ -30,6 +30,53 @@ Two basic problems dominate the theory of quadratic residues:
 
 We begin with some methods for solving problem 1.
 
+EXAMPLE To find the quadratic residues modulo $11$ we square the numbers $1, 2, \ldots , 10$ and reduce mod $11$. We 
+obtain 
+
+$$
+1^2 \equiv 1, 2^2 \equiv 4, 3^2 \equiv 9, 4^2 \equiv 5, 5^2 \equiv 3 \pmod{11}
+$$
+
+It suffices to square only the first half of the numbers since
+
+$$
+6^2 \equiv (-5)^2 \equiv 3, 7^2 \equiv (-4)^2 \equiv 5, \ldots, 10^2 \equiv (-1)^2 \equiv 1 \pmod{11}
+$$
+
+Consequently, the quadratic residues mod $11$ are $1, 3, 4, 5, 9$, and the nonresidues are $2, 6, 7, 8, 10$.
+
+This example illustrates the following theorem.
+
+**Theorem 9.1** Let $p$ be an odd prime. Then every reduced residue system mod $p$ contains exactly $(p-1)/2$ quadratic 
+residues and exactly $(p-1)/2$ quadratic nonresidues mod $p$. The quadratic residues belong to the residue classes 
+containing the numbers
+
+$$
+1^2, 2^2, 3^2, \ldots, \left(\frac{p-1}{2}\right)^2 \qquad (2)
+$$
+
+PROOF. First we note that the numbers in (2) are distinct mod $p$. In fact, if $x^2 \equiv y^2 \pmod{p}$ with 
+$1 \le x \le (p-1)/2$ and $1 \le y \le (p-1)/2$, then
+
+$$
+(x-y)(x+y) \equiv 0 \pmod{p}
+$$
+
+But $1 \lt x+y \lt p$ so $x-y \equiv 0 \pmod{p}$, hence $x=y$. Since 
+
+$$
+(p-k)^2 \equiv k^2 \pmod{p}
+$$
+
+every quadratic residue is congruent mod $p$ to exactly one of the numbers in (2). This completes the proof. $\square$
+
+The following brief table of quadratic residues $R$ and nonresidues $\bar{R}$ was obtained with the help of Theorem 9.1. 
+
+|           | $p=3$ | $p=5$ | $p=7$   | $p=11$       | $p=13$          |
+| :-------- | :---- | :---- | :------ | :----------- | :-------------- |
+| $R$       | $1$   | $1,4$ | $1,2,4$ | $1,3,4,5,9$  | $1,3,4,9,10,12$ |
+| $\bar{R}$ | $2$   | $2,3$ | $3,5,6$ | $2,6,7,8,10$ | $2,5,6,7,8,11$  |
+
 ## 9.2 Legendre's symbol and its properties
 
 ## 9.3 Evaluation of $(-1|p)$ and $(2|p)$
