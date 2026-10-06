@@ -200,7 +200,7 @@ $$
 \mu(k) = c_k(1)
 $$
 
-When $k|n$ the sum reduces to the Euler $\varphi$ since each term is $1$ and the number of terms is 
+When $k|n$ the sum reduces to the Euler $\varphi$ function since each term is $1$ and the number of terms is 
 $\varphi(k)$. Ramanujan showed that $c_k(n)$ is always an integer and that it has interesting multiplicative 
 properties. He deduced these facts from the relation
 
