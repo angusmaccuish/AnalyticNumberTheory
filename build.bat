@@ -1,1 +1,1 @@
-pandoc Chapter08.md Chapter09.md Chapter10.md Chapter11.md Chapter12.md Chapter13.md -o Apostol.epub -t epub3 --math-method=mathml
+pandoc Chapter08.md Chapter09.md Chapter10.md Chapter11.md Chapter12.md Chapter13.md --metadata-file meta.yml -t epub3 --toc -o Apostol.epub
