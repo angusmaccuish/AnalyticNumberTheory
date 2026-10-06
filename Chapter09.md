@@ -83,8 +83,8 @@ The following brief table of quadratic residues $R$ and nonresidues $\bar{R}$ wa
 
 $$
 (n|p) = \begin{cases}
-        +1 \text{ if } nRp \\
-        -1 \text{ if } n\bar{R}p
+        +1 & \text{ if } nRp \\
+        -1 & \text{ if } n\bar{R}p
         \end{cases}
 $$
 
@@ -166,6 +166,18 @@ when $p|n$, it follows that $(n|p)=\chi(n)$, where $\chi$ is one of the Dirichle
 symbol is called the *quadratic character* mod $p$. 
 
 ## 9.3 Evaluation of $(-1|p)$ and $(2|p)$
+
+**Theorem 9.4** For every odd prime $p$ we have
+
+$$
+(-1|p) = (-1)^{(p-1)/2} = \begin{cases}
+                          1  & \text { if } p \equiv 1 \pmod{4} \\
+                          -1 & \text { if } p \equiv 3 \pmod{4}
+                          \end{cases}
+$$
+
+PROOF. By Euler's criterion we have $(-1|p) \equiv (-1)^{(p-1)/2} \pmod{p}$. Since each member of this congruence is 
+$1$ or $-1$ the two members are equal. $\square$
 
 ## 9.4 Gauss' lemma
 
