@@ -102,7 +102,7 @@ $$
 n^{p-1}-1 = (n^{(p-1)/2} - 1)(n^{(p-1)/2} + 1)
 $$
 
-it follows that $n^{(p-1)/2} \equiv \pm{1} \pmod{p}$. The next theorem tells us that we get $+1$ if $nRp$ and $-1$ if 
+it follows that $n^{(p-1)/2} \equiv \pm 1 \pmod{p}$. The next theorem tells us that we get $+1$ if $nRp$ and $-1$ if 
 $n\bar{R}p$.
 
 **Theorem 9.2** Euler's criterion. Let $p$ be an odd prime. Then for all $n$ we have
