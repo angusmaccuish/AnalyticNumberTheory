@@ -479,9 +479,10 @@ primitive.
 Now we can restate the results of Theorems 8.10 through 8.12 in the terminology of primitive characters.
 
 **Theorem 8.15** Let $\chi$ be a primitive Dirichlet character mod $k$. Then we have:
-- (a) $G(n,\chi)=0$ for every $n$ with $(n,k) \gt 1$.
-- (b) $G(n,\chi)$ is separable for every $n$.
-- (c) $|G(1,\chi)|^2 =k$.
+
+(a) $G(n,\chi)=0$ for every $n$ with $(n,k) \gt 1$.  
+(b) $G(n,\chi)$ is separable for every $n$.  
+(c) $|G(1,\chi)|^2 =k$.
 
 PROOF. If $G(n,\chi) \ne 0$ for some $n$ with $(n,k) \gt 1$ then Theorem 8.12 shows that $\chi$ has an induced modulus 
 $d \lt k$, so $\chi$ cannot be primitive. This proves (a).
@@ -558,9 +559,10 @@ These examples shed light on the next theorem.
 
 **Theorem 8.17** Let $\chi$ be a Dirichlet character modulo $k$ and assume $d|k$, $d \gt 0$. Then the following two 
 statements are equivalent:
-- (a) $d$ is an induced modulus for $\chi$.
-- (b) There is a character $\psi$ modulo $d$ such that $$\chi(n) = \psi(n)\chi_1(n) \text{ for all } n \qquad (17)$$ 
-      where $\chi_1$ is the principal character modulo $k$.
+
+(a) $d$ is an induced modulus for $\chi$.  
+(b) There is a character $\psi$ modulo $d$ such that $$\chi(n) = \psi(n)\chi_1(n) \text{ for all } n \qquad (17)$$ 
+    where $\chi_1$ is the principal character modulo $k$.
 
 PROOF. Assume (b) holds. Choose $n$ satisfying $(n,k)=1$, $n \equiv 1 \pmod{d}$. Then $\chi_1(n)=\psi(n)=1$ so 
 $\chi(n)=1$ and hence $d$ is an induced modulus. Thus, (b) implies (a).
