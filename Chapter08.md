@@ -719,9 +719,8 @@ $$
 \left| \sum_{m \le x} \chi(m) \right| \le \varphi(k)
 $$
 
-which holds for any Dirichlet character $\chi$ mod $k$ and every real $x \ge 1$. This cannot be improved because when 
-$\chi=\chi_1$ we have $\sum_{m=1}^k \chi_1(m)=\varphi(k)$. However, Polya showed that the inequality can be 
-considerably improved when $\chi$ is a primitive character.
+which holds for any nonprincipal Dirichlet character $\chi$ mod $k$ and every real $x \ge 1$. However, Polya showed 
+that the inequality can be considerably improved when $\chi$ is a primitive character.
 
 **Theorem 8.21** Polya's inequality. If $\chi$ is any primitive character mod $k$ then for all $x \ge 1$ we have
 
@@ -732,13 +731,13 @@ $$
 PROOF. We express $\chi(m)$ by its finite Fourier expansion, as given in Theorem 8.20
 
 $$
-\chi(m) = \frac{\tau_k(\chi}{\sqrt{k}} \sum_{n=1}^k \bar\chi(n) e^{-2 \pi i mn/k}
+\chi(m) = \frac{\tau_k(\chi)}{\sqrt{k}} \sum_{n=1}^k \bar\chi(n) e^{-2 \pi i mn/k}
 $$
 
 and sum over all $m \le x$ to get
 
 $$
-\sum_{m \le x} \chi(m) = \frac{\tau_k(\chi}{\sqrt{k}} \sum_{n=1}^{k-1} \bar\chi(n) \sum_{m \le x} e^{-2 \pi i mn/k}
+\sum_{m \le x} \chi(m) = \frac{\tau_k(\chi)}{\sqrt{k}} \sum_{n=1}^{k-1} \bar\chi(n) \sum_{m \le x} e^{-2 \pi i mn/k}
 $$
 
 since $\chi(k)=0$. Taking absolute values and multiplying by $\sqrt{k}$ we find 
@@ -785,7 +784,7 @@ $$
 \left| f(n) \right| = \left| \frac{z^r-z^{-r}}{z-z^{-1}} \right|
                     = \left| \frac{e^{-\pi i rn/k}-e^{\pi i rn/k}}{e^{-\pi i n/k}-e^{\pi i n/k}} \right|
                     = \frac{\left| \sin{\frac{\pi rn}{k}} \right|}{\left| \sin{\frac{\pi n}{k}} \right|}
-                    \le \frac{1}{\left| \sin{\frac{\pi n}{k}} \right|} \qquad (26)
+                    \le \frac{1}{\sin{\frac{\pi n}{k}}} \qquad (26)
 $$
 
 Now we use the inequality $\sin{t} \ge 2t/\pi$, valid for $0 \le t \le \pi/2$, with $t=\pi n/k$ to get
@@ -797,13 +796,13 @@ $$
 If $k$ is odd, (25) becomes 
 
 $$
-\sqrt{k} \left| \sum_{m \le x} \chi(m) \right| \le k \sum_{n \le k/2} \frac{1}{n} \lt k \log{k}
+\sqrt{k} \left| \sum_{m \le x} \chi(m) \right| \le k \sum_{n \lt k/2} \frac{1}{n} \lt k \log{k}
 $$
 
 But if $k$ is even, $\left| f(k/2)) \right| \le 1$, and (25) gives us
 
 $$
-\sqrt{k} \left| \sum_{m \le x} \chi(m) \right| \le k \left\{ \sum_{n \le k/2} \frac{1}{n} + \frac{1}{k} \right\} \lt k \log{k}
+\sqrt{k} \left| \sum_{m \le x} \chi(m) \right| \le k \left\{ \sum_{n \lt k/2} \frac{1}{n} + \frac{1}{k} \right\} \lt k \log{k}
 $$
 
 and this proves (23).
