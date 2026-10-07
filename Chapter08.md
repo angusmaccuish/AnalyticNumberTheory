@@ -188,7 +188,7 @@ In each case the summation can be extended over any complete residue system modu
 In Exercise 2.14(b) it is shown that the M&ouml;bius function $\mu(k)$ is the sum of the primitive $k$-th roots of 
 unity. In this section we generalise this result. Specifically, let $n$ be a fixed positive integer and consider the 
 sum of the $n$-th powers of the primitive $k$-th roots of unity. This sum is known as *Ramanujan's sum* and is denoted 
-by $c_k$(n):
+by $c_k(n)$:
 
 $$
 c_k(n) = \sum_{\substack{m \text{ mod } k \\ (m,k) = 1}} e^{2 \pi i mn/k}
@@ -210,7 +210,7 @@ $$
 
 This formula shows why $c_k(n)$ reduces to both $\mu(k)$ and $\varphi(k)$. In fact, when $n=1$ there is only one term 
 in the sum and we obtain $c_k(1) = \mu(k)$. And when $k|n$ we have $(n,k) = k$ and 
-$c_k(n) = \sum_{d|k} d \, \mu(\frac{k}{d}) = \varphi(k)$. We shall deduce (5) as a special case of the more 
+$c_k(n) = \sum_{d|k} d \, \mu(\frac{k}{d}) = \varphi(k)$. We shall deduce (5) as a special case of a more 
 general result (Theorem 8.5).
 
 Formula (5) for $c_k(n)$ suggests that we study general sums of the form
@@ -219,7 +219,7 @@ $$
 \sum_{d|(n,k)} f(d) \, g\left(\frac{k}{d}\right) \qquad (6)
 $$
 
-These resemble the sums for the Dirichlet convolution of $f * g$ except that we sum over a *subset* of the divisors of 
+These resemble the sums for the Dirichlet convolution $f * g$ except that we sum over a *subset* of the divisors of 
 $k$, namely those $d$ which also divide $n$.
 
 Denote the sum in (6) by $s_k(n)$. Since $n$ occurs only in the $\gcd$ $(n,k)$ we have 
@@ -290,7 +290,7 @@ $$
 where
 
 $$
-a_k(m) = \sum_{d|(m,k)} \mu(d) \left[ \frac{1}{(m,k)} \right] = 
+a_k(m) = \sum_{d|(m,k)} \mu(d) = \left[ \frac{1}{(m,k)} \right] = 
 \begin{cases}
 1 & \text{ if } (m,k) = 1 \\
 0 & \text{ if } (m,k) \gt 1
@@ -304,6 +304,7 @@ $$
 = \sum_{\substack{m \text{ mod } k \\ (m,k)=1}} e^{2 \pi i mn/k} 
 = c_k(n)
 $$
+$\square$
 
 ## 8.4 Multiplicative properties of the sums $s_k(n)$
 
@@ -395,7 +396,7 @@ $$
 
 since the last sum over $m$ is a geometric sum which vanishes unless $r=1$. $\square$
 
-## 8.6 Dirichlet characters and nonvanishing Gauss sums
+## 8.6 Dirichlet characters with nonvanishing Gauss sums
 
 For every character $\chi$ mod $k$ we have seen that $G(n,\chi)$ is separable if $(n,k)=1$, and that the separability of 
 $G(n,\chi)$ is equivalent to the vanishing of $G(n,\chi)$ for $(n,k) \gt 1$. Now we describe the further properties of 
@@ -573,8 +574,8 @@ are zero.
 
 Now suppose $(n,d)=1$. Then there exists an integer $m$ such that $m \equiv n \pmod{d}$, $(m,k)=1$. This can be proved 
 immediately with Dirichlet's theorem. The arithmetic progression $xd+n$ contains infinitely many primes. We choose one 
-that does not divide $k$ and call this $m$. However, the result is not that deep; the existence of such an $m$ can be 
-easily established without using Dirichlet's theorem. (See Exercise 8.4 for an alternative proof.) Having chosen $m$, 
+that does not divide $k$ and call this $m$. However, the result is not that deep; the existence of such an $m$ can 
+easily be established without using Dirichlet's theorem. (See Exercise 8.4 for an alternative proof.) Having chosen $m$, 
 which is unique modulo $d$, we define 
 
 $$
