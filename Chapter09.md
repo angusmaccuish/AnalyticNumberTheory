@@ -16,7 +16,7 @@ $$
 x^2 \equiv n \pmod{p} \qquad(1)
 $$
 
-where $p$ is an odd prime and $n \equiv 0 \pmod{p}$. Since the modulus is prime we know that (1) has at most two 
+where $p$ is an odd prime and $n \not\equiv 0 \pmod{p}$. Since the modulus is prime we know that (1) has at most two 
 solutions. Moreover, if $x$ is a solution so is $-x$, hence the number of solutions is either $0$ or $2$.
 
 **Definition** If congruence (1) has a solution we say that $n$ is a quadratic residue mod $p$ and we write $nRp$. 
@@ -178,6 +178,50 @@ $$
 
 PROOF. By Euler's criterion we have $(-1|p) \equiv (-1)^{(p-1)/2} \pmod{p}$. Since each member of this congruence is 
 $1$ or $-1$ the two members are equal. $\square$
+
+**Theorem 9.5** For every odd prime $p$ we have 
+
+$$
+(2|p) = (-1)^{(p^2-1)/8} = \begin{cases}
+                           1  & \text{ if } p \equiv \pm 1 \pmod{8} \\
+                           -1 & \text{ if } p \equiv \pm 3 \pmod{8}
+                           \end{cases}
+$$
+
+PROOF. Consider the following $(p-1)/2$ congruences:
+
+$$
+\begin{align*}
+p-1 & \equiv 1(-1)^1 \pmod{p} \\
+  2 & \equiv 2(-1)^2 \pmod{p} \\
+p-3 & \equiv 3(-1)^3 \pmod{p} \\
+  4 & \equiv 4(-1)^4 \pmod{p} \\
+    & \vdots                  \\
+  r & \equiv \frac{p-1}{2}(-1)^{(p-1)/2} \pmod{p}
+\end{align*}
+$$
+
+where $r$ is either $p-(p-1)/2$ or $(p-1)/2$. Multiply these together and note that each integer on the left is even. 
+We obtain
+
+$$
+2 \cdot 4 \cdot 6 \cdots (p-1) \equiv \left(\frac{p-1}{2}\right)! (-1)^{1+2+\cdots+(p-1)/2} \pmod{p}
+$$
+
+This gives us 
+
+$$
+2^{(p-1)/2} \left(\frac{p-1}{2}\right)! \equiv \left(\frac{p-1}{2}\right)! (-1)^{(p^2-1)/8} \pmod{p}
+$$
+
+Since $((p-1)/2)! \not\equiv 0 \pmod{p}$ this implies
+
+$$
+2^{(p-1)/2} \equiv (-1)^{(p^2-1)/8} \pmod{p}
+$$
+
+By Euler's criterion we have $2^{(p-1)/2} \equiv (2|p) \pmod{p}$ and since each member is $1$ or $-1$ the two members 
+are equal. This completes the proof. $\square$
 
 ## 9.4 Gauss' lemma
 
