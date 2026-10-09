@@ -954,34 +954,43 @@ Using this in (45) we obtain (44). $\square$
 
 ## 9.11 Another proof of the quadratic reciprocity law
 
+Gauss' formula (30) leads to a quick proof of the quadratic reciprocity law. First we note that (30) implies 
 
+$$
+G(1;k) = i^{(k-1)^2/4} \sqrt{k}
+$$
 
+if $k$ is odd. Also, we have the multiplicative property (see Exercise 8.16(a)) 
 
+$$
+G(m;n)G(n;m) = G(1; mn) \text{ if } (m, n) = 1
+$$
 
+Therefore, if $p$ and $q$ are distinct odd primes we have
 
+$$
+\begin{align*}
+G(p;q) &= (p|q) G(1;q) = (p|q) i^{(q-1)^2/4} \sqrt{q} \\
+G(q;p) &= (q|p) G(1;p) = (q|p) i^{(p-1)^2/4} \sqrt{q} 
+\end{align*}
+$$
 
+and
 
+$$
+G(p;q) G(q;p) = G(1;pq) = i^{(pq-1)^2/4} \sqrt{pq}
+$$
 
+Comparing the last equation with the previous two we find
 
+$$
+(p|q)(q|p)i^{\{(q-1)^2 + (p-1)^2\}/4} = i^{(pq-1)^2/4}
+$$
 
+and the quadratic reciprocity law follows by observing that
 
+$$
+i^{\{(pq-1)^2 - (q-1)^2 - (p-1)^2\}/4} = (-1)^{(p-1)(q-1)/4}
+$$
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$\square$
