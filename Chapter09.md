@@ -225,6 +225,90 @@ are equal. This completes the proof. $\square$
 
 ## 9.4 Gauss' lemma
 
+Although Euler's criterion gives a straightforward method for computing $(n|p)$, the calculation may become prohibitive 
+for large $n$ since it requires raising $n$ to the power $(p-1)/2$. Gauss found another criterion which involves a 
+simpler calculation.
+
+**Theorem 9.6** Gauss' lemma. Assume $n \not\equiv 0 \pmod{p}$ and consider the least positive residues mod $p$ of the 
+following $(p-1)/2$ multiples of $n$:
+
+$$
+n,2n,3n,\ldots,\frac{p-1}{2}n \qquad(3)
+$$
+
+If $m$ denotes the number of these residues which exceed $p/2$, then
+
+$$
+(n|p) = (-1)^m
+$$
+
+PROOF. The numbers in (3) are incongruent mod $p$. We consider their least positive residues and distribute them into 
+two disjoint sets $A$ and $B$, according as the residues are $\lt p/2$ or $\gt p/2$. Thus
+
+$$
+A = \{ a_1, a_2, \ldots, a_k \}
+$$
+
+where each $a_i \equiv tn \pmod{p}$ for some $t \le (p-1)/2$ and $0 \lt a_i \lt p/2$; and 
+
+$$
+B = \{ b_1, b_2, \ldots, b_m \}
+$$
+
+where each $b_i \equiv sn \pmod{p}$ for some $s \le (p-1)/2$ and $p/2 \lt b_i \lt p$. Note that $m+k = (p-1)/2$ since 
+$A$ and $B$ are disjoint. The number $m$ of elements in $B$ is pertinent in this theorem. Form a new set $C$ of $m$ 
+elements by subtracting each $b_i$ from $p$. Thus
+
+$$
+C = \{ c_1, c_2, \ldots, c_m \} \text{ where } c_i = p - b_i
+$$
+
+Now $0 \lt c_i \lt p/2$ so the elements of $C$ lie in the same interval as the elements of $A$. We show next that the 
+sets $A$ and $C$ are disjoint. 
+
+Assume that $c_i=a_j$ for some pair $i$ and $j$. Then $p-b_i=a_j$, or $a_j+b_i \equiv 0 \pmod{p}$. Therefore 
+
+$$
+tn + sn = (t + s)n \equiv 0 \pmod{p}
+$$
+
+for some $s$ and $t$ with $1 \le t \lt p/2$, $1 \le s \lt p/2$. But this is impossible since $p \nmid n$ and 
+$0 \lt s + t \lt p$. Therefore $A$ and $C$ are disjoint, so their union $A \cup C$ contains $m+k=(p-1)/2$ integers in 
+the interval $[1,(p-1)/2]$. Hence
+
+$$
+A \cup C = \{ a_1, a2, \ldots a_k, c_1, c_2, \ldots, c_m \} = \left\{ 1, 2, \ldots, \frac{p-1}{2} \right\}
+$$
+
+Now form the product of all the elements in $A \cup C$ to obtain
+
+$$
+a_1 a_2 \cdots a_k c_1 c_2 \cdots c_m = \left( \frac{p-1}{2} \right)!
+$$
+
+Since $c_i=p-b_i$ this gives us
+
+$$
+\begin{align*}
+\left( \frac{p-1}{2} \right)! &= a_1 a_2 \cdots a_k (p-b_1) (p-b_2) \cdots (p-c_m) \\
+                              &\equiv (-1)^m a_1 a_2 \cdots c_k b_1 b_2 \cdots b_m \pmod{p} \\
+                              &\equiv (-1)^m n(2n)(3n) \cdots \left( \frac{p-1}{2}n \right) \pmod{p} \\
+                              &\equiv (-1)^m n^{(p-1)/2} \left( \frac{p-1}{2} \right)! \pmod{p} \\
+\end{align*}
+$$
+
+Cancelling the factorial we obtain
+
+$$
+n^{(p-1)/2} \equiv (-1)^m \pmod{p}
+$$
+
+Euler's criterion shows that $(-1)^m \equiv (n|p) \pmod{p}$ hence $(-1)^m=(n|p)$ and the proof of Gauss' lemma is 
+complete. $\square$
+
+To use Gauss' lemma in practice we need not know the exact value of $m$, but only its parity, that is, whether $m$ is 
+odd or even. The next theorem gives a relatively simple way to determine the parity of $m$. 
+
 ## 9.5 The quadratic reciprocity law
 
 ## 9.9 Gauss sums and the quadratic reciprocity law
