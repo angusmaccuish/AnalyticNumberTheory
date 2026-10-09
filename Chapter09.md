@@ -491,10 +491,70 @@ by M. Gerstenhaber [25].
 
 ## 9.9 Gauss sums and the quadratic reciprocity law
 
+This section gives another proof of the quadratic reciprocity law with the help of the Gauss sums
+
+$$
+G(n,\chi) = \sum_{r \text{ mod } k} \chi(r) e^{2 \pi i nr/p} \qquad(16)
+$$
+
+where $\chi(r)=(r|p)$ is the quadratic character mod $p$. Since the modulus is prime, $\chi$ is a primitive character 
+and we have the separability property
+
+$$
+G(n,\chi) = (n|p) G(1,\chi) \qquad(17)
+$$
+
+for every $n$. Also, Theorem 8.11 implies that $\left| G(1,\chi) \right|^2 = p$. The next theorem shows that 
+$G(1,\chi)^2 = \pm p.$
+
+**Theorem 9.13** If $p$ is an odd prime and $\chi(r)=(r|p)$ we have 
+
+$$
+G(1,\chi)^2 = (-1|p) p \qquad(18)
+$$
+
+PROOF. We have
+
+$$
+G(1,\chi)^2 = \sum_{r=1}^{p-1} \sum_{s=1}^{p-1} (r|p) (s|p) e^{2 \pi i(r+s)/p}
+$$
+
+For each pair $r,s$ there is a unique $t$ mod $p$ such that $s \equiv tr \pmod{p}$, and 
+$(r|p)(s|p) = (r|p)(tr|p) = (r^2|p)(t|p) = (t|p)$. Hence
+
+$$
+G(1,\chi)^2 = \sum_{t=1}^{p-1} \sum_{r=1}^{p-1} (t|p) e^{2 \pi ir(1+t)/p} 
+            = \sum_{t=1}^{p-1} (t|p) \sum_{r=1}^{p-1} e^{2 \pi ir(1+t)/p} 
+$$
+
+The last sum on $r$ is a geometric sum given by
+
+$$
+\sum_{r=1}^{p-1} e^{2 \pi ir(1+t)/p} = \begin{cases}
+                                        -1 & \text{ if } p \nmid (1+t) \\
+                                       p-1 & \text{ if } p | (1+t)
+                                       \end{cases}
+$$
+
+Therefore
+
+$$
+\begin{align*}
+G(1,\chi)^2 &= -\sum_{t=1}^{p-2} (t|p) + (p-1)(p-1|p)
+             = -\sum_{t=1}^{p-1} (t|p) + p(-1|p)       \\
+            &= (-1|p) p
+\end{align*}
+$$
+
+since $\sum_{t=1}^{p-1} (t|p) = 0$. This proves (18). $\square$
+
+Equation (18) shows that $G(1,\chi)^2$ is an integer, so $G(1,\chi)^{q-1}$ is also an integer for every odd $q$. The 
+next theorem shows that the quadratic reciprocity law is connected to the value of this integer modulo $q$.
+
+## 9.10 The reciprocity law for quadratic Gauss sums
+
 ![Figure 9.1](images/9.1.png)
 
 ![Figure 9.2](images/9.2.png)
-
-## 9.10 The reciprocity law for quadratic Gauss sums
 
 ## 9.11 Another proof of the quadratic reciprocity law
