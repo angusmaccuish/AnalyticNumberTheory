@@ -551,6 +551,126 @@ since $\sum_{t=1}^{p-1} (t|p) = 0$. This proves (18). $\square$
 Equation (18) shows that $G(1,\chi)^2$ is an integer, so $G(1,\chi)^{q-1}$ is also an integer for every odd $q$. The 
 next theorem shows that the quadratic reciprocity law is connected to the value of this integer modulo $q$.
 
+**Theorem 9.14** Let $p$ and $q$ be distinct odd primes and let $\chi$ be the quadratic character mod $p$. Then the 
+quadratic reciprocity law
+
+$$
+(q|p) = (-1)^{(p-1)(q-1)/4} (p|q) \qquad(19)
+$$
+
+is equivalent to the congruence
+
+$$
+G(1,\chi)^{q-1} \equiv (q|p) \pmod{q} \qquad(20)
+$$
+
+PROOF. From (18) we have
+
+$$
+G(1,\chi)^{q-1} = (-1|p)^{(q-1)/2} p^{(q-1)/2} = (-1)^{(p-1)(q-1)/4} p^{(q-1)/2} \qquad(21)
+$$
+
+By Euler's criterion we have $p^{(q-1)/2} \equiv (p|q) \pmod{q}$ so (21) implies
+
+$$
+G(1,\chi)^{q-1} \equiv (-1)^{(p-1)(q-1)/4} (p|q) \pmod{q} \qquad(22)
+$$
+
+If (20) holds we obtain
+
+$$
+(q|p) \equiv (-1)^{(p-1)(q-1)/4} (p|q) \pmod{q}
+$$
+
+which implies (19) since both members are $\pm 1$. Conversely, if (19) holds then (22) implies (20).
+
+The next theorem gives an identity which we will use to deduce (20).
+
+**Theorem 9.15** If $p$ and $q$ are distinct odd primes and if $\chi$ is the quadratic character mod $p$ we have
+
+$$
+G(1,\chi)^{q-1} = (q|p) \sum_{\substack{r_1 \text{ mod } p \\ r_1 + \cdots + r_q \equiv q \pmod{p} }} \cdots \sum_{\substack{r_q \text{ mod } p \\ r_1 + \cdots + r_q \equiv q \pmod{p} }} (r_1 \cdots r_q|p) \qquad(23)
+$$
+
+PROOF. The Gauss sum $G(n,\chi)$ is a periodic function of $n$ with period $p$. The same is true of $G(n,\chi)^q$ so we 
+have a finite Fourier expansion
+
+$$
+G(n,\chi)^q = \sum_{m \text{ mod } p} a_q(m) e^{2 \pi i  mn/p}
+$$
+
+where the coefficients are given by
+
+$$
+a_q(m) = \frac{1}{p} \sum_{n \text{ mod }p} G(n,\chi) e^{-2 \pi i mn/p} \qquad(24)
+$$
+
+From the definition of $G(n,\chi)$ we have
+
+$$
+\begin{align*}
+G(n,\chi)^q &= \sum_{r_1 \text{ mod } p} (r_1|p) e^{2 \pi i nr_1/p} \cdots \sum_{r_q \text{ mod } p} (r_q|p) e^{2 \pi i nr_q/p} \\
+            &= \sum_{r_1 \text{ mod } p} \cdots \sum_{r_q \text{ mod } p} (r_1 \cdots r_q|p) e^{2 \pi i n(r_1 + \cdots + r_q)/p}
+\end{align*}
+$$
+
+so (24) becomes
+
+$$
+a_q(m) = \frac{1}{p} \sum_{r_1 \text{ mod } p} \cdots \sum_{r_q \text{ mod } p} (r_1 \cdots r_q|p) \sum_{n \text{ mod }p} e^{2 \pi i n(r_1 + \cdots + r_q - m)/p}
+$$
+
+The sum on $n$ is a geometric sum which vanishes unless $r_1+\cdots+r_q \equiv m \pmod{p}$, in which case the sum is 
+equal to $p$. Hence
+
+$$
+a_q(m) = \sum_{\substack{r_1 \text{ mod } p \\ r_1 + \cdots + r_q \equiv q \pmod{p} }} \cdots \sum_{\substack{r_q \text{ mod } p \\ r_1 + \cdots + r_q \equiv q \pmod{p} }} (r_1 \cdots r_q|p) \qquad(25)
+$$
+
+Now we return to (24) and obtain an alternate expression for $a_q(m)$. Using the separability of $G(n,\chi)$ and the 
+relation $(n|p)^q=(n|p)$ for odd $q$ we find
+
+$$
+\begin{align*}
+a_q(m) &= \frac{1}{p} G(1,\chi)^q \sum_{n \text{ mod } p} (n|p) e^{-2 \pi i mn/p} = \frac{1}{p} G(1,\chi)^q G(-m,\chi) \\
+       &= \frac{1}{p} G(1,\chi)^q (m|p) G(-1,\chi) = (m|p) G(1, \chi)^{q-1}
+\end{align*}
+$$
+
+since
+
+$$
+G(1,\chi) G(-1,\chi) = G(1,\chi)\overline{G(1,\chi)} = \left| G(1,\chi) \right|^2 = p
+$$
+
+In other words, $G(1,\chi)^{q-1} = (m|p) a_q(m)$. Taking $m=q$ and using (25) we obtain (23). $\square$
+
+PROOF OF THE RECIPROCITY LAW. To deduce the quadratic reciprocity law from (23) it suffices to show that
+
+$$
+\sum_{r_1 \text{ mod } p} \cdots \sum_{r_q \text{ mod } p} (r_1 \cdots r_q|p) \equiv 1 \pmod{q} \qquad(26)
+$$
+
+where the summation indices $r_1, \ldots, r_q$ are subject to the restriction 
+
+$$
+r_1 + \cdots + r_q \equiv q \pmod{p} \qquad(27)
+$$
+
+If all the indices $r_1, \ldots, r_q$ are congruent to each other mod $p$, then their sum is congruent to $qr_j$ for 
+each $j=1,2,\ldots,q$, so (27) holds if, and only if, 
+
+$$
+q r_j \equiv q \pmod{p}
+$$
+
+that is, if, and only if $r_j \equiv 1 \pmod{p}$ for each $j$. In this case the corresponding summand in (26) is 
+$(1|p)=1$. For all other choices of indices satisfying (27) there must be at least two incongruent indices among 
+$r_1,\ldots,r_q$. Therefore every cyclic permutation of $r_1,\ldots,r_q$ gives a new solution of (27) which 
+contributes the same summand, $(r_1 \cdots r_q|p)$. Therefore each such summand appears $q$ times and contributes $0$ 
+modulo $q$ to the sum. Hence the only contribution to the sum in (26) which is nonzero modulo $q$ is $(1|p)=1$. This 
+completes the proof. $\square$
+
 ## 9.10 The reciprocity law for quadratic Gauss sums
 
 ![Figure 9.1](images/9.1.png)
@@ -558,3 +678,35 @@ next theorem shows that the quadratic reciprocity law is connected to the value 
 ![Figure 9.2](images/9.2.png)
 
 ## 9.11 Another proof of the quadratic reciprocity law
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
