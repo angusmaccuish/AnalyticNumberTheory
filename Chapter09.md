@@ -673,9 +673,284 @@ completes the proof. $\square$
 
 ## 9.10 The reciprocity law for quadratic Gauss sums
 
+This section describes another proof of the quadratic reciprocity law based on the quadratic Gauss sums
+
+$$
+G(n;m) = \sum_{r=1}^m e^{2 \pi i nr^2/m} \qquad(28)
+$$
+
+If $p$ is an odd prime and $p \nmid n$ we have the formula
+
+$$
+G(n;m) = (n|p) G(1;p) \qquad(29)
+$$
+
+which reduces the study of the sums $G(n;m)$ to the case $n=1$. Equation (29) follows easily from (28) or by noting 
+that $G(n;p)=G(n,\chi)$, where $\chi(n)=(n|p)$, and observing that $G(n,\chi)$ is separable.
+
+Although each term of the sum $G(1;p)$ has absolute value $1$, the sum itself has absolute value 
+$0, \sqrt{p} \text{ or } \sqrt{2p}$. In fact, Gauss proved the remarkable formula
+
+$$
+(30) \quad G(1;m) = \frac{1}{2} \sqrt{m} (1+i)(1 + e^{-\pi im/2}) = 
+     \begin{cases}
+         \sqrt{m}      & \text{ if } m \equiv 1 \pmod{4} \\
+         0             & \text{ if } m \equiv 2 \pmod{4} \\
+         i\sqrt{m}     & \text{ if } m \equiv 3 \pmod{4} \\
+         (1+i)\sqrt{m} & \text{ if } m \equiv 0 \pmod{4} \\
+     \end{cases}                   
+$$
+
+for every $m \ge 1$. A number of different proofs of (30) are known. We will deduce (30) by treating a related sum
+
+$$
+S(a,m) = \sum_{r=0}^{m-1} e^{\pi iar^2/m}
+$$
+
+where $a$ and $m$ are positive integers. If $a=2$, then $S(2,m) = G(1;m)$.
+
+The sums $S(a,m)$ enjoy a reciprocity law (stated below in Theorem 9.16) which implies Gauss' formula (30) and also 
+leads to another proof of the quadratic reciprocity law. 
+
+**Theorem 9.16** If the product $ma$ is even, we have 
+
+$$
+S(a,m) = \sqrt{\frac{m}{a}} \left( \frac{1+i}{\sqrt{2}} \right) \overline{S(m,a)} \qquad(31)
+$$
+
+where the bar denotes the complex conjugate.
+
+*Note*. To deduce Gauss' formula (30) we take $a=2$ in (31) and observe that $\overline{S(m,2)}=1+e^{-\pi im/2}$.
+
+PROOF. This proof is based on residue calculus. Let $g$ be the function defined by the equation 
+
+$$
+g(z) = \sum_{r=0}^{m-1} e^{\pi ia(z+r)^2/m} \qquad(32)
+$$
+
+Then $g$ is analytic everywhere, and $g(0)=S(a,m)$. Since $ma$ is even we find
+
+$$
+g(z+1) - g(z) = e^{\pi iaz^2/m} (e^{2 \pi iaz} - 1) 
+              = e^{\pi iaz^2/m} (e^{2 \pi iz} - 1) \sum_{n=0}^{a-1} e^{2 \pi inz}
+$$
+
+Now define $f$ by the equation
+
+$$
+f(z) = \frac{g(z)}{e^{2 \pi iz} - 1}
+$$
+
+Then $f$ is analytic everywhere except for a first-order pole at each integer, and $f$ satisfies the equation
+
+$$
+f(z+1) = f(z) + \varphi(z) \qquad(33)
+$$
+
+where
+
+$$
+\varphi(z) = e^{\pi iaz^2/m} \sum_{n=0}^{a-1} e^{2 \pi inz} \qquad(34)
+$$
+
+The function $\varphi(z)$ is analytic everywhere.
+
+At $z=0$ the residue of $f$ is $g(0)/(2\pi i)$ and hence
+
+$$
+S(a,m) = g(0) = 2 \pi i \operatorname{Res}_{z=0} = \int_\gamma f(z) dz
+$$
+
+where $\gamma$ is any positively oriented simple closed path whose graph contains only the pole $z=0$ in its interior 
+region. We will choose $\gamma$ so that it describes a parallelogram with vertices $A$, $A+1$, $B+1$, $B$ where
+
+$$
+A = -\frac{1}{2} - R e^{\pi i/4} \text{ and } B = -\frac{1}{2} + R e^{\pi i/4}
+$$
+
+as shown in Figure 9.1. Integrating $f$ along $\gamma$ we have
+
+$$
+\int_\gamma f = \int_A^{A+1} f + \int_{A+1}^{B+1} f + \int_{B+1}^B f + \int_B^A f
+$$
+
 ![Figure 9.1](images/9.1.png)
 
+In the integral $\int_{A+1}^{B+1} f$ we make the change of variable $w=z+1$ and then use (33) to get
+
+$$
+\int_{A+1}^{B+1} f(w) dw = \int_A^B f(z+1) dz = \int_A^B f(z) dz + \int_A^B \varphi(z) dz 
+$$
+
+Therefore (35) becomes
+
+$$
+S(a,m) = \int_A^B \varphi(z) dz + \int_A^{A+1} f(z) dz - \int_B^{B+1} f(z) dz \qquad(36)
+$$
+
+Now we show that the integrals along the horizontal segments from $A$ to $A+1$ and from $B$ to $B+1$ tend to $0$ as 
+$R \to \infty$. To do this we estimate the integrand on these segments. We write
+
+$$
+\left| f(z) \right| = \frac{\left| g(z) \right|}{\left| e^{2 \pi iz} - 1\right|} \qquad(37)
+$$
+
+and estimate the numerator and denominator separately.
+
+On the segment joining $B$ to $B+1$ we let
+
+$$
+\gamma(t) = t + R e^{\pi i/4}, \text{ where } -\frac{1}{2} \le t \le \frac{1}{2}
+$$
+
+From (32) we find
+
+$$
+\left| g[\gamma(t)] \right| \le \sum_{r=0}^{m-1} \left| \mathrm{exp}\left\{ \frac{\pi ia(t + R e^{\pi i/4} + r)^2}{m} \right\} \right| \qquad(38)
+$$
+
+where $\mathrm{exp} z = e^z$. The expression in braces has real part
+
+$$
+\frac{-\pi a(\sqrt{2}tR + R^2 + \sqrt{2}rR)}{m}
+$$
+
+Since $\left| e^{x+iy} \right|=e^x$ and $\mathrm{exp}\left\{ -\pi a \sqrt{2}rR/m \right\} \le 1$, each term in (38) has 
+absolute value not exceeding $\mathrm{exp}\left\{ -\pi aR^2/m \right\} \mathrm{exp} \left\{ -\sqrt{2} \pi atR/m \right\}$. 
+But $-1/2 \le t \lt 1/2$, so we obtain the estimate
+
+$$
+\left| g[\gamma(t)] \right| \le m e^{\pi \sqrt{2} aR/(2m)} e^{-\pi aR^2/m}
+$$
+
+For the denominator in (37) we use the triangle inequality in the form 
+
+$$
+\left| e^{2 \pi iz} - 1 \right| \ge \left| \left| e^{2 \pi iz} \right| -1 \right|
+$$
+
+Since $\mathrm{exp}\left\{ 2 \pi i \gamma(t) \right\} = \mathrm{exp}\left\{ -2 \pi R \sin{\pi/4} \right\} =  \mathrm{exp}\left\{ -\sqrt{2} \pi R \right\}$, 
+we find
+
+$$
+\left| e^{2 \pi i \gamma(t)} - 1 \right| \ge 1 - e^{-\sqrt{2} \pi R}
+$$
+
+Therefore on the line segment joining $B$ to $B+1$ we have the estimate
+
+$$
+\left| f(z) \right| \le \frac{m e^{\pi \sqrt{2} aR/(2m)} e^{-\pi a R^2/m}}{1 - e^{-\sqrt{2} \pi R}} 
+                    = o(1) \text{ as } R \to +\infty
+$$
+
+A similar argument shows that the integrand tends to $0$ on the segment joining $A$ to $A+1$ as $R \to +\infty$. Since 
+the length of the path of integration is $1$ in each case, this shows that the second and third integrals on the right 
+of (36) tend to $0$ as $R \to +\infty$. Therefore we can write (36) in the form
+
+$$
+S(a,m) = \int_A^B \varphi(z) dz + o(1) \text{ as } R \to +\infty \qquad(39)
+$$
+
+To deal with the integral $\int_A^B \varphi$ we apply Cauchy's theorem, integrating $\varphi$ around the parallelogram 
+with vertices $A, B, \alpha, -\alpha$, where $\alpha = B+\frac{1}{2} = R e^{\pi i/4}$. (See Figure 9.2.) Since 
+$\varphi$ is analytic everywhere, its integral around this parallelogram is $0$, so
+
+$$
+\int_A^B \varphi + \int_B^\alpha \varphi + \int_\alpha^{-\alpha} \varphi + \int_{-\alpha}^A \varphi = 0 \qquad(40) 
+$$
+
 ![Figure 9.2](images/9.2.png)
+
+Because of the exponential factor $e^{\pi iaz^2/m}$ in (34), an argument similar to that given above shows that the 
+integral of $\varphi$ along each horizontal segment $\to 0$ as $R \to +\infty$. Therefore (40) gives us
+
+$$
+\int_A^B \varphi = \int_{-\alpha}^\alpha \varphi + o(1) \text{ as } R \to +\infty
+$$
+
+and (39) becomes
+
+$$
+S(a,m) =  \int_{-\alpha}^\alpha \varphi(z) dz + o(1) \text{ as } R \to +\infty \qquad(41)
+$$
+
+where $\alpha = R e^{\pi i/4}$. Using (34) we find
+
+$$
+\int_{-\alpha}^\alpha \varphi(z) dz = \sum_{n=0}^{a-1} \int_{-\alpha}^\alpha e^{{\pi}iaz^2/m} e^{2{\pi}inz} dz
+                                    = \sum_{n=0}^{a-1} e^{-{\pi}imn^2/a} I(a,m,n,R)
+$$
+
+where
+
+$$
+I(a,m,n,R) = \int_{-\alpha}^\alpha \mathrm{exp}\left\{ \frac{{\pi}ia}{m} \left( z+\frac{nm}{a} \right)^2 \right\} dz
+$$
+
+Applying Cauchy's theorem again to the parallelogram with vertices $-\alpha$, $\alpha$, $\alpha-(nm/a)$, and 
+$-\alpha-(nm/a)$, we find as before that the integrals along the horizontal segments $\to 0$ as $R \to +\infty$, so
+
+$$
+I(a,m,n,R) = \int_{-\alpha-nm/a}^{\alpha-nm/a} \mathrm{exp}\left\{ \frac{{\pi}ia}{m} \left( z+\frac{nm}{a} \right)^2 \right\} dz + o(1) \text{ as } R \to +\infty
+$$
+
+The change of variable $w=\sqrt{a/m}(z+(nm/a))$ puts this into the form
+
+$$
+I(a,m,n,R) = \sqrt{\frac{m}{a}} \int_{-\alpha \sqrt{a/m}}^{\alpha \sqrt{a/m}} e^{{\pi}iw^2} dw + o(1) \text{ as } R \to +\infty
+$$
+
+Letting $R \to +\infty$ in (41), we find
+
+$$
+S(a,m) = \sum_{n=0}^{a-1} e^{-{\pi}imn^2/a} \sqrt{\frac{m}{a}} \lim_{R \to \infty} \int_{-R\sqrt{a/m}e^{{\pi}i/4}}^{R\sqrt{a/m}e^{{\pi}i/4}} e^{{\pi}iw^2} dw \qquad(42)
+$$
+
+By writing $T = \sqrt{a/m}R$,  we see that the last limit is equal to
+
+$$
+\lim_{T \to +\infty} \int_{-Te^{{\pi}i/4}}^{Te^{{\pi}i/4}} e^{{\pi}iw^2} dw = I
+$$
+
+say, where $I$ is a number independent of $a$ and $m$. Therefore (42) gives us 
+
+$$
+S(a,m) = \sqrt{\frac{m}{a}} I \overline{S(m,a)} \qquad(43)
+$$
+
+To evaluate $I$ we take $a=1$ and $m=2$ in (43). Then $S(1,2)=1+i$ and $S(2,1)=1$, so (43) implies $I=(1 + i)/\sqrt{2}$, 
+and (43) reduces to (31). $\square$
+
+Theorem 9.16 implies a reciprocity law for quadratic Gauss sums.
+
+**Theorem 9.17** If $h \gt 0$, $k \gt 0$, $h$ odd, then
+
+$$
+G(h;k) = \sqrt{\frac{k}{h}} \frac{1+i}{2} (1+e^{-{\pi}ihk/2}) \overline{G(k;h)} \qquad(44)
+$$
+
+PROOF. Take $a=2h$, $m=k$ in Theorem 9.16 to obtain
+
+$$
+G(h;k) = S(2h,k) = \sqrt{\frac{k}{2h}} \frac{1+i}{\sqrt{2}} \overline{S(k,2h)}
+                 = \sqrt{\frac{k}{h}} \frac{1+i}{2} \sum_{r=0}^{2h-1} e^{{\pi}ikr^2/(2h)} \qquad(45)
+$$
+
+We split the sum on $r$ into two parts corresponding to even and odd $r$. For even $r$ we write $r=2s$ where 
+$s=0,1,2,\ldots,h-1$. For odd $r$ we note that $(r+2h)^2 \equiv r^2 \pmod{4h}$ so the sum can be extended over 
+the odd numbers in any complete residue system mod $2h$. We sum over the odd numbers in the interval 
+$h \le r \lt 3h$, writing $r=2s+h$, where $s=0,1,2,\ldots,h-1$. (The numbers $2s+h$ are odd and distinct mod $2h$.) 
+This gives us
+
+$$
+\begin{align*}
+\sum_{r=0}^{2h-1} e^{-{\pi}ikr^2/(2h)} &= \sum_{s=0}^{h-1} e^{-{\pi}ik(2s)^2/(2h)} + \sum_{s=0}^{h-1} e^{-{\pi}ik(2s+h)^2/(2h)} \\
+                                       &= \sum_{s=0}^{h-1} e^{-2{\pi}iks^2/h} (1 + e^{-{\pi}ihk/2}) \\
+                                       &= (1 + e^{-{\pi}ihk/2}) \overline{G(k;h)}
+\end{align*}
+$$
+
+Using this in (45) we obtain (44). $\square$
 
 ## 9.11 Another proof of the quadratic reciprocity law
 
