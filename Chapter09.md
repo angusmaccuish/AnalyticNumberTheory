@@ -309,6 +309,90 @@ complete. $\square$
 To use Gauss' lemma in practice we need not know the exact value of $m$, but only its parity, that is, whether $m$ is 
 odd or even. The next theorem gives a relatively simple way to determine the parity of $m$. 
 
+**Theorem 9.7** Let $m$ be the number defined in Gauss' lemma. Then
+
+$$
+m \equiv \sum_{t=1}^{(p-1)/2} \left[ \frac{tn}{p} \right] + (n-1) \frac{p^2-1}{8} \pmod{2}
+$$
+
+In particular, if $n$ is odd we have 
+
+$$
+m \equiv \sum_{t=1}^{(p-1)/2} \left[ \frac{tn}{p} \right] \pmod{2}
+$$
+
+PROOF. Recall that $m$ is the number of least positive residues of the numbers
+
+$$
+n, 2n, 3n \ldots, \frac{p-1}{2}n
+$$
+
+which exceed $p/2$. Take a typical number, say $tn$, divide it by $p$ and examine the size of the remainder. We have 
+
+$$
+\frac{tn}{p} = \left[ \frac{tn}{p} \right] + \left\{ \frac{tn}{p} \right\}, \text{ where } 0 \lt \left\{ \frac{tn}{p} \right\} \lt 1
+$$
+
+so
+
+$$
+tn = p \left[ \frac{tn}{p} \right] + p \left\{ \frac{tn}{p} \right\} = p \left[ \frac{tn}{p} \right] + r_t
+$$
+
+say, where $0 \lt r_i \lt p$. The number $r_t = tn -p[tn/p]$ is the least positive residue of $tn$ modulo $p$. 
+Referring again to the sets $A$ and $B$ used in the proof of Gauss' lemma we have
+
+$$
+\{ r_1, r_2, \ldots, r_{(p-1)/2} \} = \{ a_1, a_2, \ldots, a_k, b_1, \ldots, b_m \}
+$$
+
+Recall also that 
+
+$$
+\left\{ 1, 2, \dots, \frac{p-1}{2} \right\} =  \{ a_1, a_2, \ldots, a_k, c_1, \ldots, c_m\}
+$$
+
+where each $c_i=p-b_i$. Now we compute the sums of the elements in these sets to obtain the two equations
+
+$$
+\sum_{t=1}^{(p-1)/2} r_t = \sum_{i=1}^k a_i + \sum_{j=1}^m b_j
+$$
+
+and 
+
+$$
+\sum_{t=1}^{(p-1)/2} t = \sum_{i=1}^k a_i + \sum_{j=1}^m c_j = \sum_{i=1}^k a_i + mp - \sum_{j=1}^m b_j
+$$
+
+In the first equation we replace $r_t$ by its definition to obtain
+
+$$
+\sum_{i=1}^k a_i + \sum_{j=1}^m b_j = n \sum_{t=1}^{(p-1)/2} t - p \sum_{t=1}^{(p-1)/2} \left[ \frac{tn}{p} \right]
+$$
+
+The second equation is 
+
+$$
+mp + \sum_{i=1}^k a_i - \sum_{j=1}^m b_j = \sum_{t=1}^{(p-1)/2} t
+$$
+
+Adding this to the previous equation we get 
+
+$$
+\begin{align*}
+mp + 2 \sum_{i=1}^k a_i &= (n+1) \sum_{t=1}^{(p-1)/2} t - p \sum_{t=1}^{(p-1)/2} \left[ \frac{tn}{p} \right] \\
+                        &= (n+1)\frac{p^2-1}{8} - p \sum_{t=1}^{(p-1)/2} \left[ \frac{tn}{p} \right]
+\end{align*}
+$$
+
+Now we reduce this modulo $2$, noting that $n+1 \equiv n-1 \pmod{2}$ and $p \equiv 1 \pmod{2}$, and we obtain 
+
+$$
+m \equiv (n-1)\frac{p^2-1}{8} + \sum_{t=1}^{(p-1)/2} \left[ \frac{tn}{p} \right] \pmod{2}
+$$
+
+which completes the proof. $\square$
+
 ## 9.5 The quadratic reciprocity law
 
 ## 9.9 Gauss sums and the quadratic reciprocity law
