@@ -395,6 +395,100 @@ which completes the proof. $\square$
 
 ## 9.5 The quadratic reciprocity law
 
+Both Euler's criterion and Gauss' lemma give straightforward though sometimes lengthy procedures for solving the first 
+basic problem of the theory of quadratic residues. The second problem is much more difficult. Its solution depends on a 
+remarkable theorem known as the quadratic reciprocity law, first stated in a complicated form by Euler in the period 
+1744-1746, and rediscovered in 1785 by Legendre who gave a partial proof. Gauss discovered the reciprocity law 
+independently at the age of eighteen and a year later in 1796 gave the first complete proof. 
+
+The quadratic reciprocity law states that if $p$ and $q$ are distinct odd primes, then $(p|q)=(q|p)$ unless 
+$p \equiv q \equiv 3 \pmod{4}$, in which case $(p|q)=-(q|p)$. The theorem is usually stated in the following symmetric 
+form given by Legendre. 
+
+**Theorem 9.8** Quadratic reciprocity law. If $p$ and $q$ are distinct odd primes, then
+
+$$
+(p|q)(q|p) = (-1)^{(p-1)(q-1)/4} \qquad(4)
+$$
+
+PROOF. By Gauss' lemma and Theorem 9.7 we have
+
+$$
+(q|p) = (-1)^m
+$$
+
+where 
+
+$$
+m = \sum_{t=1}^{(p-1)/2} \left[ \frac{tq}{p} \right] \pmod{2}
+$$
+
+Similarly, 
+
+$$
+(p|q) = (-1)^n
+$$
+
+where
+$$
+n = \sum_{s=1}^{(q-1)/2} \left[ \frac{sp}{q} \right] \pmod{2}
+$$
+
+Hence $(p|q)(q|p)=(-1)^{m+n}$, and (4) follows at once from the identity
+
+$$
+\sum_{t=1}^{(p-1)/2} \left[ \frac{tq}{p} \right] + \sum_{s=1}^{(q-1)/2} \left[ \frac{sp}{q} \right] = \frac{p-1}{2} \frac{q-1}{2} \qquad(5)
+$$
+
+To prove (5) consider the function
+
+$$
+f(x,y) = qx - py \quad \text{ for } |x| \lt p/2 \text{ and } |y| \lt q/2
+$$
+
+If $x$ and $y$ are nonzero integers then $f(x,y)$ is a nonzero integer. Moreover, as $x$ takes the values 
+$1, 2, \ldots, (p-1)/2$ and $y$ takes the values $1, 2, \ldots, (q-1)/2$ then $f(x,y)$ takes
+
+$$
+\frac{p-1}{2} \frac{q-1}{2}
+$$
+
+values, no two of which are equal since
+
+$$
+f(x,y)- f(x',y') = f(x - x',y - y') \ne 0
+$$
+
+Now we count the number of values of $f(x,y)$ which are positive and the number which are negative.
+
+For each fixed $x$ we have $f(x,y) \gt 0$ if and only if $y \lt qx/p$, or $y \le [qx/p]$. Hence the total number of 
+positive values is
+
+$$
+\sum_{x=1}^{(p-1)/2} \left[ \frac{qx}{p} \right]
+$$
+
+Similarly, the number of negative values is
+
+$$
+\sum_{y=1}^{(q-1)/2} \left[ \frac{py}{q} \right]
+$$
+
+Since the number of positive and negative values together is
+
+$$
+\frac{p-1}{2} \frac{q-1}{2}
+$$
+
+this proves (5) and hence (4). $\square$
+
+*Note*. The reader may find it instructive to interpret the foregoing proof of (5) geometrically, using lattice points 
+in the plane.
+
+At least 150 proofs of the quadratic reciprocity law have been published. Gauss himself supplied no less than eight, 
+including a version of the one just given. A short proof of the quadratic reciprocity law is described in an article 
+by M. Gerstenhaber [25]. 
+
 ## 9.9 Gauss sums and the quadratic reciprocity law
 
 ![Figure 9.1](images/9.1.png)
