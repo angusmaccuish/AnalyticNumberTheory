@@ -306,10 +306,6 @@ $$
 $$
 $\square$
 
-## 8.4 Multiplicative properties of the sums $s_k(n)$
-
-Out of scope
-
 ## 8.5 Gauss sums associated with Dirichlet characters
 
 **Definition** For any Dirichlet character $\chi$ mod $k$ the sum
