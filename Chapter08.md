@@ -155,7 +155,7 @@ This equation gives us (2). $\square$
 arithmetical function $g$, also periodic mod $k$, such that
 
 $$
-f(n) = \sum_{n=0}^{k-1} g(n) e^{2 \pi i mn/k}
+f(m) = \sum_{n=0}^{k-1} g(n) e^{2 \pi i mn/k}
 $$
 
 In fact, $g$ is given by the formula
