@@ -277,7 +277,7 @@ $0 \lt s + t \lt p$. Therefore $A$ and $C$ are disjoint, so their union $A \cup 
 the interval $[1,(p-1)/2]$. Hence
 
 $$
-A \cup C = \{ a_1, a2, \ldots a_k, c_1, c_2, \ldots, c_m \} = \left\{ 1, 2, \ldots, \frac{p-1}{2} \right\}
+A \cup C = \{ a_1, a_2, \ldots a_k, c_1, c_2, \ldots, c_m \} = \left\{ 1, 2, \ldots, \frac{p-1}{2} \right\}
 $$
 
 Now form the product of all the elements in $A \cup C$ to obtain
@@ -290,8 +290,8 @@ Since $c_i=p-b_i$ this gives us
 
 $$
 \begin{align*}
-\left( \frac{p-1}{2} \right)! &= a_1 a_2 \cdots a_k (p-b_1) (p-b_2) \cdots (p-c_m) \\
-                              &\equiv (-1)^m a_1 a_2 \cdots c_k b_1 b_2 \cdots b_m \pmod{p} \\
+\left( \frac{p-1}{2} \right)! &= a_1 a_2 \cdots a_k (p-b_1) (p-b_2) \cdots (p-b_m) \\
+                              &\equiv (-1)^m a_1 a_2 \cdots a_k b_1 b_2 \cdots b_m \pmod{p} \\
                               &\equiv (-1)^m n(2n)(3n) \cdots \left( \frac{p-1}{2}n \right) \pmod{p} \\
                               &\equiv (-1)^m n^{(p-1)/2} \left( \frac{p-1}{2} \right)! \pmod{p} \\
 \end{align*}
@@ -380,8 +380,8 @@ Adding this to the previous equation we get
 
 $$
 \begin{align*}
-mp + 2 \sum_{i=1}^k a_i &= (n+1) \sum_{t=1}^{(p-1)/2} t - p \sum_{t=1}^{(p-1)/2} \left[ \frac{tn}{p} \right] \\
-                        &= (n+1)\frac{p^2-1}{8} - p \sum_{t=1}^{(p-1)/2} \left[ \frac{tn}{p} \right]
+mp + 2 \sum_{i=1}^k a_i &= (n+1) \sum\limits_{t=1}^{(p-1)/2} t - p \sum\limits_{t=1}^{(p-1)/2} \left[ \frac{tn}{p} \right] \\
+                        &= (n+1)\frac{p^2-1}{8} - p \sum\limits_{t=1}^{(p-1)/2} \left[ \frac{tn}{p} \right]
 \end{align*}
 $$
 
@@ -494,7 +494,7 @@ by M. Gerstenhaber [25].
 This section gives another proof of the quadratic reciprocity law with the help of the Gauss sums
 
 $$
-G(n,\chi) = \sum_{r \text{ mod } k} \chi(r) e^{2 \pi i nr/p} \qquad(16)
+G(n,\chi) = \sum_{r \text{ mod } p} \chi(r) e^{2 \pi i nr/p} \qquad(16)
 $$
 
 where $\chi(r)=(r|p)$ is the quadratic character mod $p$. Since the modulus is prime, $\chi$ is a primitive character 
@@ -540,8 +540,8 @@ Therefore
 
 $$
 \begin{align*}
-G(1,\chi)^2 &= -\sum_{t=1}^{p-2} (t|p) + (p-1)(p-1|p)
-             = -\sum_{t=1}^{p-1} (t|p) + p(-1|p)       \\
+G(1,\chi)^2 &= -\sum\limits_{t=1}^{p-2} (t|p) + (p-1)(p-1|p)
+             = -\sum\limits_{t=1}^{p-1} (t|p) + p(-1|p)       \\
             &= (-1|p) p
 \end{align*}
 $$
@@ -589,7 +589,7 @@ The next theorem gives an identity which we will use to deduce (20).
 **Theorem 9.15** If $p$ and $q$ are distinct odd primes and if $\chi$ is the quadratic character mod $p$ we have
 
 $$
-G(1,\chi)^{q-1} = (q|p) \sum_{\substack{r_1 \text{ mod } p \\ r_1 + \cdots + r_q \equiv q \pmod{p} }} \cdots \sum_{\substack{r_q \text{ mod } p \\ r_1 + \cdots + r_q \equiv q \pmod{p} }} (r_1 \cdots r_q|p) \qquad(23)
+G(1,\chi)^{q-1} = (q|p) \sum_{\substack{r_1 \text{ mod } p \\ r_1 + \cdots + r_q \equiv q \pmod{p} }} \cdots \sum_{r_q \text{ mod } p} (r_1 \cdots r_q|p) \qquad(23)
 $$
 
 PROOF. The Gauss sum $G(n,\chi)$ is a periodic function of $n$ with period $p$. The same is true of $G(n,\chi)^q$ so we 
@@ -602,15 +602,15 @@ $$
 where the coefficients are given by
 
 $$
-a_q(m) = \frac{1}{p} \sum_{n \text{ mod }p} G(n,\chi) e^{-2 \pi i mn/p} \qquad(24)
+a_q(m) = \frac{1}{p} \sum_{n \text{ mod }p} G(n,\chi)^q e^{-2 \pi i mn/p} \qquad(24)
 $$
 
 From the definition of $G(n,\chi)$ we have
 
 $$
 \begin{align*}
-G(n,\chi)^q &= \sum_{r_1 \text{ mod } p} (r_1|p) e^{2 \pi i nr_1/p} \cdots \sum_{r_q \text{ mod } p} (r_q|p) e^{2 \pi i nr_q/p} \\
-            &= \sum_{r_1 \text{ mod } p} \cdots \sum_{r_q \text{ mod } p} (r_1 \cdots r_q|p) e^{2 \pi i n(r_1 + \cdots + r_q)/p}
+G(n,\chi)^q &= \sum\limits_{r_1 \text{ mod } p} (r_1|p) e^{2 \pi i nr_1/p} \cdots \sum\limits_{r_q \text{ mod } p} (r_q|p) e^{2 \pi i nr_q/p} \\
+            &= \sum\limits_{r_1 \text{ mod } p} \cdots \sum\limits_{r_q \text{ mod } p} (r_1 \cdots r_q|p) e^{2 \pi i n(r_1 + \cdots + r_q)/p}
 \end{align*}
 $$
 
@@ -624,7 +624,7 @@ The sum on $n$ is a geometric sum which vanishes unless $r_1+\cdots+r_q \equiv m
 equal to $p$. Hence
 
 $$
-a_q(m) = \sum_{\substack{r_1 \text{ mod } p \\ r_1 + \cdots + r_q \equiv q \pmod{p} }} \cdots \sum_{\substack{r_q \text{ mod } p \\ r_1 + \cdots + r_q \equiv q \pmod{p} }} (r_1 \cdots r_q|p) \qquad(25)
+a_q(m) = \sum_{\substack{r_1 \text{ mod } p \\ r_1 + \cdots + r_q \equiv q \pmod{p} }} \cdots \sum_{r_q \text{ mod } p} (r_1 \cdots r_q|p) \qquad(25)
 $$
 
 Now we return to (24) and obtain an alternate expression for $a_q(m)$. Using the separability of $G(n,\chi)$ and the 
@@ -632,7 +632,7 @@ relation $(n|p)^q=(n|p)$ for odd $q$ we find
 
 $$
 \begin{align*}
-a_q(m) &= \frac{1}{p} G(1,\chi)^q \sum_{n \text{ mod } p} (n|p) e^{-2 \pi i mn/p} = \frac{1}{p} G(1,\chi)^q G(-m,\chi) \\
+a_q(m) &= \frac{1}{p} G(1,\chi)^q \sum\limits_{n \text{ mod } p} (n|p) e^{-2 \pi i mn/p} = \frac{1}{p} G(1,\chi)^q G(-m,\chi) \\
        &= \frac{1}{p} G(1,\chi)^q (m|p) G(-1,\chi) = (m|p) G(1, \chi)^{q-1}
 \end{align*}
 $$
@@ -682,10 +682,10 @@ $$
 If $p$ is an odd prime and $p \nmid n$ we have the formula
 
 $$
-G(n;m) = (n|p) G(1;p) \qquad(29)
+G(n;p) = (n|p) G(1;p) \qquad(29)
 $$
 
-which reduces the study of the sums $G(n;m)$ to the case $n=1$. Equation (29) follows easily from (28) or by noting 
+which reduces the study of the sums $G(n;p)$ to the case $n=1$. Equation (29) follows easily from (28) or by noting 
 that $G(n;p)=G(n,\chi)$, where $\chi(n)=(n|p)$, and observing that $G(n,\chi)$ is separable.
 
 Although each term of the sum $G(1;p)$ has absolute value $1$, the sum itself has absolute value 
@@ -817,7 +817,7 @@ $$
 
 Since $\left| e^{x+iy} \right|=e^x$ and $\mathrm{exp}\left\{ -\pi a \sqrt{2}rR/m \right\} \le 1$, each term in (38) has 
 absolute value not exceeding $\mathrm{exp}\left\{ -\pi aR^2/m \right\} \mathrm{exp} \left\{ -\sqrt{2} \pi atR/m \right\}$. 
-But $-1/2 \le t \lt 1/2$, so we obtain the estimate
+But $-1/2 \le t \le 1/2$, so we obtain the estimate
 
 $$
 \left| g[\gamma(t)] \right| \le m e^{\pi \sqrt{2} aR/(2m)} e^{-\pi aR^2/m}
@@ -944,8 +944,8 @@ This gives us
 
 $$
 \begin{align*}
-\sum_{r=0}^{2h-1} e^{-{\pi}ikr^2/(2h)} &= \sum_{s=0}^{h-1} e^{-{\pi}ik(2s)^2/(2h)} + \sum_{s=0}^{h-1} e^{-{\pi}ik(2s+h)^2/(2h)} \\
-                                       &= \sum_{s=0}^{h-1} e^{-2{\pi}iks^2/h} (1 + e^{-{\pi}ihk/2}) \\
+\sum_{r=0}^{2h-1} e^{-{\pi}ikr^2/(2h)} &= \sum\limits_{s=0}^{h-1} e^{-{\pi}ik(2s)^2/(2h)} + \sum\limits_{s=0}^{h-1} e^{-{\pi}ik(2s+h)^2/(2h)} \\
+                                       &= \sum\limits_{s=0}^{h-1} e^{-2{\pi}iks^2/h} (1 + e^{-{\pi}ihk/2}) \\
                                        &= (1 + e^{-{\pi}ihk/2}) \overline{G(k;h)}
 \end{align*}
 $$
