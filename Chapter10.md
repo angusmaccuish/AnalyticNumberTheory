@@ -245,6 +245,136 @@ nonresidues. $\square$
 
 ## 10.6 The existence of primitive roots mod $p^\alpha$
 
+We turn next to the case $m=p^\alpha$, where $p$ is an odd prime and $\alpha \ge 2$. In seeking primitive roots mod 
+$p^\alpha$ it is natural to consider as candidates the primitive roots mod $p$. Let $g$ be such a primitive root and 
+let us ask whether $g$ might also be a primitive root mod $p^2$. Now $g^{p-1} \equiv 1 \pmod{p}$ and, since 
+$\varphi(p^2) = p(p-1) \gt p-1$, this $g$ will certainly not be a primitive root mod $p^2$ if 
+$g^{p-1} \equiv 1 \pmod{p^2}$. Therefor the relation
+
+$$
+g^{p-1} \not \equiv 1 \pmod{p^2}
+$$
+
+is a *necessary* condition for a primitive root $g$ mod $p$ to also be a primitive root mod $p^2$. Remarkably enough, 
+this condition is also *sufficient* for $g$ to be a primitive root mod $p^2$ and, more generally, mod $p^\alpha$ for 
+all powers $\alpha \ge 2$. In fact, we have the following theorem.
+
+**Theorem 10.6** Let $p$ be an odd prime. Then we have: 
+
+(a) If $g$ is a primitive root mod $p$ then $g$ is also a primitive root mod $p^\alpha$ for all $\alpha \ge 1$ if, and 
+    only if,
+
+$$
+g^{p-1} \not \equiv 1 \pmod{p^2} \qquad(5)
+$$
+
+(b) There is at least one primitive root $g$ mod $p$ which satisfies (5), hence there exists at least one primitive 
+root mod $p^\alpha$ if $\alpha \ge 2$.
+
+PROOF. We prove (b) first. Let $g$ be a primitive root mod $p$. If $g^{p-1} \not \equiv 1 \pmod{p^2}$ there is nothing 
+to prove. However, if $g^{p-1} \equiv 1 \pmod{p^2}$ we can show that $g_1 = g + p$, which is another primitive root 
+modulo $p$, satisfies the condition 
+
+$$
+g_1^{p-1} \not \equiv 1 \pmod{p^2}
+$$
+
+In fact, we have 
+
+$$
+\begin{align*}
+g_1^{p-1} &= (g + p)^{p-1} = g^{p-1} + (p-1) g^{p-2} p + t p^2 \\
+          &\equiv g^{p-1} + (p^2 - p) g^{p-2} \pmod{p^2}       \\
+          &\equiv 1 - p g^{p-2} \pmod{p^2}
+\end{align*}
+$$
+
+But we cannot have $p g^{p-2} \equiv 0 \pmod{p^2}$ for this would imply $g^{p-2} \equiv 0 \pmod{p}$, contradicting the 
+fact that $g$ is a primitive root mod $p$. Hence $g_1^{p-1} \not \equiv 1 \pmod{p^2}$, so (b) is proved.
+
+Now we prove (a). Let $g$ be a primitive root modulo $p$. If this $g$ is a primitive root mod $p^\alpha$ for all 
+$\alpha \ge 1$ then, in particular, it is a primitive root mod $p^2$ and, as we have already noted, this implies (5).
+
+Now we prove the converse statement. Suppose that $g$ is a primitive root mod $p$ which satisfies (5). We must show 
+that $g$ is also a primitive root mod $p^\alpha$ for all $\alpha \ge 2$. Let $t$ be the exponent of $g$ modulo 
+$p^\alpha$. We wish to show that $t = \varphi(p^\alpha)$. Since $g^t \equiv 1 \pmod{p^\alpha}$ we also have 
+$g^t \equiv 1 \pmod{p}$ so $\varphi(p) | t$ and we can write
+
+$$
+t = q \varphi(p) \qquad(6)
+$$
+
+Now $t | \varphi(p^\alpha)$ so $q \varphi(p) | \varphi(p^\alpha)$. But $\varphi(p^\alpha) = p^{\alpha-1}(p-1)$ hence
+
+$$
+q (p-1) | p^{\alpha-1} (p-1)
+$$
+
+which means $q | p^{\alpha-1}$. Therefore $q = p^\beta$ where $\beta \le \alpha-1$, and (6) becomes 
+
+$$
+t = p^\beta (p-1)
+$$
+
+If we prove that $\beta = \alpha-1$ then $t = \varphi(p^\alpha)$ and the proof will be complete. 
+
+Suppose, on the contrary, that $\beta \lt \alpha-1$. Then $\beta \le \alpha-2$ and we have 
+
+$$
+t = p^\beta (p-1) | p^{\alpha-2} (p-1) = \varphi(p^{\alpha-1})
+$$
+
+Thus, since $\varphi(p^{\alpha-1})$ is a multiple of $t$, this implies, 
+
+$$
+g^{\varphi(p^{\alpha-1})} \equiv 1 \pmod{p^\alpha} \qquad(7)
+$$
+
+But now we make use of the following Lemma which shows that (7) is a contradiction. This contradiction will complete 
+the proof of Theorem 10.6. $\square$
+
+**Lemma 2** Let $g$ be a primitive root modulo $p$ such that
+
+$$
+g^{p-1} \not \equiv 1 \pmod{p^2} \qquad(8)
+$$
+
+Then for every $\alpha \ge 2$ we have 
+
+$$
+g^{\varphi(p^{\alpha-1})} \not \equiv 1 \pmod{p^\alpha} \qquad(9)
+$$
+
+PROOF of Lemma 2. We use induction on $\alpha$. For $\alpha = 2$, relation (9) reduces to (8). Suppose then, that (9) 
+holds for $\alpha$. By the Euler-Fermat theorem we have
+
+$$
+g^{\varphi(p^{\alpha-1})} \equiv 1 \pmod{p^{\alpha-1}}
+$$
+
+so
+
+$$
+g^{\varphi(p^{\alpha-1})} = 1 + k p^{\alpha-1}
+$$
+
+where $p \nmid k$ because of (9). Raising both sides of this last relation to the $p^{\text{th}}$ power we find
+
+$$
+g^{\varphi(p^\alpha)} = (1 + k p^{\alpha-1})^p
+                      = 1 + k p^\alpha + k^2 \frac{p(p-1)}{2} p^{2(\alpha-1)} + r p^{3(\alpha-1)}
+$$
+
+Now $2\alpha - 1 \ge \alpha + 1$ and $3\alpha - 3 \ge \alpha + 1$ since $\alpha \ge 2$. Hence, the last equation gives 
+us the congruence
+
+$$
+g^{\varphi(p^\alpha)} \equiv 1 + k p^\alpha \pmod{p^{\alpha+1}}
+$$
+
+where $p \nmid k$. In other words, $g^{\varphi(p^\alpha)} \not \equiv 1 \pmod{p^{\alpha+1}}$, so (9) holds for 
+$\alpha + 1$ if it holds for $\alpha$. This completes the proof of Lemma 2 and also of Theorem 10.6. $\square$
+
 ## 10.7 The existence of primitive roots mod $2p^\alpha$
 
 ## 10.8 The nonexistence of primitive roots in the remaining cases
