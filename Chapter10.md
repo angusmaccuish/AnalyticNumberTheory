@@ -219,6 +219,30 @@ we have shown that $f(d) = \varphi(d)$ if $f(d) \ne 0$. As noted earlier, this c
 
 ## 10.5 Primitive roots and quadratic residues
 
+**Theorem 10.5** Let $g$ be a primitive root mod $p$, where $p$ is an odd prime. Then the even powers
+
+$$
+g^2, g^4, \ldots, g^{p-1}
+$$
+
+are the quadratic residues mod $p$, and the odd powers 
+
+$$
+g, g^3, \ldots, g^{p-2}
+$$
+
+are the quadratic nonresidues mod $p$.
+
+PROOF. If $n$ is even, say $n=2m$, then $g^n=(g^m)^2$ so 
+
+$$
+g^n \equiv x^2 \pmod{p}, \text{ where } x=g^m
+$$
+
+Hence $g^nRp$. But there are $(p-1)/2$ distinct even powers $g^2,\ldots,g^{p-1}$ modulo $p$ and the same number of 
+quadratic residues mod $p$. Therefore the even powers are the quadratic residues and the odd powers are the 
+nonresidues. $\square$
+
 ## 10.6 The existence of primitive roots mod $p^\alpha$
 
 ## 10.7 The existence of primitive roots mod $2p^\alpha$
