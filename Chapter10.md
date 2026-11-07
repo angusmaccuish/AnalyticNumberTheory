@@ -377,6 +377,17 @@ $\alpha + 1$ if it holds for $\alpha$. This completes the proof of Lemma 2 and a
 
 ## 10.7 The existence of primitive roots mod $2p^\alpha$
 
+**Theorem 10.7** If $p$ is an odd prime and $\alpha \ge 1$ there exist odd primitive roots $g$ modulo $p^\alpha$. Each 
+such $g$ is also a primitive root modulo $2p^\alpha$.
+
+PROOF. If $g$ is a primitive root modulo $p^\alpha$ so is $g + p^\alpha$. But one of $g$ or $g + p^\alpha$ is odd so 
+*odd* primitive roots mod $p^\alpha$ always exist. Let $g$ be an odd primitive root mod $p^\alpha$ and let $f$ be the 
+exponent of $g$ mod $2 p^\alpha$. We wish to show that $f = \varphi(2 p^\alpha)$. Now $f | \varphi(2 p^\alpha)$, and 
+$\varphi(2 p^\alpha) = \varphi(2) \varphi(p^\alpha) = \varphi(p^\alpha)$ so $f | \varphi(p^\alpha)$. On the other hand, 
+$g^f \equiv 1 \pmod{2 p^\alpha}$ so $g^f \equiv 1 \pmod{p^\alpha}$, hence $\varphi(p^\alpha) | f$ since $g$ is a 
+primitive root mod $p^\alpha$. Therefore $f = \varphi(p^\alpha) = \varphi(2 p^\alpha)$, so $g$ is a primitive root mod 
+$2 p^\alpha$.
+
 ## 10.8 The nonexistence of primitive roots in the remaining cases
 
 ## 10.9 The number of primitive roots mod $m$
