@@ -118,6 +118,105 @@ because $2\alpha \ge \alpha+1$. This completes the proof since $\varphi(2^\alpha
 
 ## 10.4 The existence of primitive roots mod $p$ for odd primes $p$
 
+First we prove the following lemma.
+
+**Lemma 1** Given $(a,m)=1$, let $f=\exp_m(a)$. Then
+
+$$
+\exp_m(a^k) = \frac{\exp_m(a)}{(k,f)}
+$$
+
+In particular, $exp_m(a^k) = \exp_m(a)$ if, and only if, $(k,f)=1$.
+
+PROOF. The exponent of $a^k$ is the smallest positive $x$ such that
+
+$$
+a^{xk} \equiv 1 \pmod{m}
+$$
+
+This is also the smallest $x \gt 0$ such that $kx \equiv 0 \pmod{f}$. But this latter congruence is equivalent to the 
+congruence
+
+$$
+x \equiv 0 \pmod{\frac{f}{d}}
+$$
+
+where $d=(k,f)$. The smallest positive solution of this congruence is $f/d$, so $\exp_m(a^k)=f/d$, as asserted. 
+$\square$
+
+Lemma 1 will be used to prove the existence of primitive roots for prime moduli. In fact, we shall determine the exact 
+number of primitive roots mod $p$.
+
+**Theorem 10.4** Let $p$ be an odd prime and let $d$ be any positive divisor of $p-1$. Then in every reduced residue 
+system mod $p$ there are exactly $\varphi(d)$ numbers $a$ such that
+
+$$
+\exp_p(a) = d
+$$
+
+In particular, when $d = \varphi(p) = p-1$ there are exactly $\varphi(p-1)$ primitive roots mod $p$.
+
+PROOF. We use the method employed in Chapter 2 to prove the relation
+
+$$
+\sum\limits_{d|n} \varphi(d) = n
+$$
+
+The numbers $1,2,\ldots,p-1$ are distributed into disjoint sets $A(d)$, each set corresponding to a divisor $d$ of 
+$p-1$. Here we define 
+
+$$
+A(d) = \{ x: 1 \le x \le p-1 \text{ and } \exp_p(x)=d \}
+$$
+
+Let $f(d)$ be the number of elements in $A(d)$. Then $f(d) \ge 0$ for each $d$. Our goal is to prove that 
+$f(d) = \varphi(d)$.
+
+Since the sets $A(d)$ are disjoint and since each $x=1,2,\ldots,p-1$ falls into some $A(d)$, we have 
+
+$$
+\sum\limits_{d|p-1} f(d) = p-1
+$$
+
+But we also have
+
+$$
+\sum\limits_{d|p-1} \varphi(d) = p-1
+$$
+
+so
+
+$$
+\sum\limits_{d|p-1} \left\{\varphi(d) - f(d)\right\} = 0
+$$
+
+To show each term in this sum is zero it suffices to prove that $f(d) \le \varphi(d)$. We do this by showing that 
+either $f(d)=0$ or $f(d) = \varphi(d)$; or, in other words, that $f(d) \ne 0$ implies $f(d) = \varphi(d)$.
+
+Suppose that $f(d) \ne 0$. Then $A(d)$ is nonempty so $a \in A(d)$ for some $a$. Therefore
+
+$$
+\exp_p(a) = d, \text{ hence } a^d \equiv 1 \pmod{p}
+$$
+
+But every power of $a$ satisfies the same congruence, so the $d$ numbers
+
+$$
+a, a^2, \ldots, a^d \qquad(3)
+$$
+
+are solutions of the polynomial congruence
+
+$$
+x^d - 1 \equiv 0 \pmod{p} \qquad(4)
+$$
+
+these solutions being incongruent mod $p$ since $d = \exp_p(a)$. But (4) has at most $d$ solutions since the modulus is 
+prime, so the $d$ numbers in (3) must be *all* the solutions of (4). Hence each number in $A(d)$ must be of the form 
+$a^k$ for some $k=1,2,\ldots,d$. When is $\exp_p(a^k) = d$? According to Lemma 1 this occurs if, and only if, 
+$(k,d)=1$. In other words, among the $d$ numbers in (3) there are $\varphi(d)$ which have exponent $d$ modulo $p$. Thus 
+we have shown that $f(d) = \varphi(d)$ if $f(d) \ne 0$. As noted earlier, this completes the proof.
+
 ## 10.5 Primitive roots and quadratic residues
 
 ## 10.6 The existence of primitive roots mod $p^\alpha$
