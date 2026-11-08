@@ -43,7 +43,7 @@ $$
 
 Then $1 \equiv a^{k-h} = a^{qf+r} \equiv a^r \pmod{m}$, so $r=0$ and $k \equiv h \pmod{f}$.
 
-Conversely, if $k \equiv h \pmod{m}$ then $k-h=qf$ so $a^{k-h} \equiv 1 \pmod{m}$ and hence $a^k \equiv a^h \pmod{m}$. 
+Conversely, if $k \equiv h \pmod{f}$ then $k-h=qf$ so $a^{k-h} \equiv 1 \pmod{m}$ and hence $a^k \equiv a^h \pmod{m}$. 
 $\square$
 
 ## 10.2 Primitive roots and reduced residue systems
@@ -109,7 +109,7 @@ $$
 where $t$ is an integer. Squaring both sides we obtain 
 
 $$
-x^{\varphi(2^\alpha)} = 1 + 2^{\alpha+1} t + 2^{2\alpha} t^2 \equiv 1 \mod{2^{\alpha+1}}
+x^{\varphi(2^\alpha)} = 1 + 2^{\alpha+1} t + 2^{2\alpha} t^2 \equiv 1 \pmod{2^{\alpha+1}}
 $$
 
 because $2\alpha \ge \alpha+1$. This completes the proof since $\varphi(2^\alpha) = 2^{\alpha-1} = 
