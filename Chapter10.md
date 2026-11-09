@@ -390,6 +390,100 @@ $2 p^\alpha$.
 
 ## 10.8 The nonexistence of primitive roots in the remaining cases
 
+**Theorem 10.8** Given $m \ge 1$ where $m$ is not of the form $m=1,2,4,p^\alpha, \text{ or } 2p^\alpha$, where $p$ is an 
+odd prime. Then for any $a$ with $(a,m)=1$ we have
+
+$$
+a^{\varphi(m)/2} \equiv 1 \pmod{m}
+$$
+
+so there are no primitive roots mod $m$.
+
+PROOF. We have already shown that there are no primitive roots mod $2^\alpha$ if $\alpha \ge 3$. Therefore we can 
+suppose that $m$ has the factorisation 
+
+$$
+m = 2^\alpha p_1^{\alpha_1} \cdots p_s^{\alpha_s}
+$$
+
+where the $p_i$ are odd primes, $s \ge 1$, and $\alpha \ge 0$. Since $m$ is not of the form 
+$1,2,4,p^\alpha \text{ or } 2p^\alpha$ we have $\alpha \ge 2$ if $s = 1$ and $s \ge 2$ if $\alpha = 0 \text{ or } 1$. 
+Note that 
+
+$$
+\varphi(m) = \varphi(2^\alpha) \varphi(p_1^{\alpha_1}) \cdots \varphi(p_s^{\alpha_s})
+$$
+
+Now let $a$ be any integer relatively prime to $m$. We wish to prove that
+
+$$
+a^{\varphi(m)/2} \equiv 1 \pmod{m}
+$$
+
+Let $g$ be a primitive root mod $p_1^{\alpha_1}$ and choose $k$ so that
+
+$$
+a \equiv g^k \pmod{p_1^{\alpha_1}}
+$$
+
+Then we have
+
+$$
+a^{\varphi(m)/2} \equiv g^{k \varphi(m)/2} \equiv g^{t \varphi(p_1^{\alpha_1})} \pmod{p_1^{\alpha_1}} \qquad(10)
+$$
+
+where
+
+$$
+t = k \varphi(2^\alpha) \varphi(p_2^{\alpha_2}) \cdots \varphi(p_s^{\alpha_s}) / 2
+$$
+
+We will show that $t$ is an integer. If $\alpha \ge 2$ the factor $\varphi(2^\alpha)$ is even and hence $t$ is an 
+integer. If $\alpha = 0 \text{ or } 1$ then $s \ge 2$ and the factor $\varphi(p_2^{\alpha_2})$ is even, so $t$ is an 
+integer in this case as well. Hence congruence (10) gives us
+
+$$
+a^{\varphi(m)/2} \equiv 1 \pmod{p_1^{\alpha_1}}
+$$
+
+In the same way we find
+
+$$
+a^{\varphi(m)/2} \equiv 1 \pmod{p_i^{\alpha_i}} \qquad(11)
+$$
+
+for each $i=1,2,\ldots,s$. Now we show that this congruence also holds mod $2^\alpha$. If $\alpha \ge 3$ the condition
+$(a,m)=1$ requires $a$ to be odd and we may apply Theorem 10.3 to write
+
+$$
+a^{\varphi(2^\alpha)/2} \equiv 1 \pmod{2^\alpha}
+$$
+
+Since $\varphi(2^\alpha) | \varphi(m)$ this gives us
+
+$$
+a^{\varphi(m)/2} \equiv 1 \pmod{2^\alpha} \qquad(12)
+$$
+
+for $\alpha \ge 3$.
+
+If $\alpha \le 2$ we have
+
+$$
+a^{\varphi(2^\alpha)} \equiv 1 \pmod{2^\alpha} \qquad(13)
+$$
+
+But $s \ge 1$ so 
+$\varphi(m) = \varphi(2^\alpha) \varphi(p_1^{\alpha_1}) \cdots \varphi(p_s^{\alpha_s}) = 2r \varphi(2^\alpha)$ where 
+$r$ is an integer. Hence $\varphi(2^\alpha) | \varphi(m)/2$ and (13) implies (12) for $\alpha \le 2$. Hence (12) holds 
+for all $\alpha$. Multiplying together the congruences (11) and (12) we obtain
+
+$$
+a^{\varphi(m)/2} \equiv 1 \pmod{m}
+$$
+
+and this shows that $a$ cannot be a primitive root mod $m$. $\square$
+
 ## 10.9 The number of primitive roots mod $m$
 
 ## 10.10 The index calculus
