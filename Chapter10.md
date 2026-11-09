@@ -486,6 +486,33 @@ and this shows that $a$ cannot be a primitive root mod $m$. $\square$
 
 ## 10.9 The number of primitive roots mod $m$
 
+We have shown that an integer $m \ge 1$ has a primitive root if and only if
+
+$$
+m = 1, 2, 4, p^\alpha \text{ or } 2p^\alpha
+$$
+
+where $p$ is an odd prime and $\alpha \ge 1$. The next theorem tells us how many primitive roots exist for each such 
+$m$. 
+
+**Theorem 10.9** If $m$ has a primitive root $g$ then $m$ has exactly $\varphi(\varphi(m))$ incongruent primitive roots 
+and they are given by the numbers in the set 
+
+$$
+S = \{ g^n: 1 \le n \le \varphi(m), \text{ and } (n,\varphi(m)) = 1 \}
+$$
+
+PROOF. We have $\exp_m(g) = \varphi(m)$, and Lemma 1 shows that $\exp_m(g^n) = \exp_m(g)$ if and only if 
+$(n,\varphi(m)) = 1$. Therefore each element of $S$ is a primitive root mod $m$.
+
+Conversely, if $a$ is a primitive root mod $m$, then $a \equiv g^k \pmod{m}$ for some $k=1,2,\ldots,\varphi(m)$. Hence 
+$\exp_m(g^k) = \exp_m(a) = \varphi(m)$, and Lemma 1 implies $(k,\varphi(m))=1$. Therefore every primitive root is a 
+member of $S$. Since $S$ contains $\varphi(\varphi(m))$ incongruent members mod $m$ the proof is complete. $\square$
+
+Although we have shown the existence of primitive roots for certain moduli, no direct method is known for calculating 
+these roots in general without a great deal of computation, especially for large moduli. Let $g(p)$ denote the smallest 
+primitive root mod $p$. Table 10.1 lists $g(p)$ for all odd primes $p \lt 1000$.
+
 ## 10.10 The index calculus
 
 ## 10.11 Primitive roots and Dirichlet characters
