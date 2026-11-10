@@ -673,6 +673,52 @@ with two solutions, $x \equiv 8 \text{ and } 31 \pmod{46}$. These are also the s
 
 ## 10.11 Primitive roots and Dirichlet characters
 
+Primitive roots and indices can be used to construct explicitly all the Dirichlet characters mod $m$. First we consider 
+a prime power modulus $p^\alpha$, where $p$ is an odd prime and $\alpha \ge 1$.
+
+Let $g$ be a primitive root mod $p$ which is also a primitive root mod $p^\beta$ for all $\beta \ge 1$. Such a $g$ 
+exists by Theorem 10.6. If $(n,p) = 1$ let $b(n) = \text{ind}_g \: n \pmod{p^\alpha}$, so that $b(n)$ is the unique 
+integer satisfying the conditions 
+
+$$
+n \equiv g^{b(n)} \pmod{p^\alpha} \qquad 0 \le b(n) \lt \varphi(p^\alpha)
+$$
+
+For $h = 0, 1, 2, \ldots, \varphi(p^\alpha)-1$, define $\chi_h$ by the relations
+
+$$
+(21) \qquad \chi_h(n) = 
+  \begin{cases}
+    e^{2 \pi i h b(n) / \varphi(p^\alpha)} & \text{ if } p \nmid n \\
+    0                                    & \text{ if } n|p
+  \end{cases}
+$$
+
+Using the properties of indices it is easy to verify that $\chi_h$ is completely multiplicative and periodic with 
+period $p^\alpha$, so $\chi_h$ is a Dirichlet character mod $p^\alpha$, with $\chi_0$  being the principal character. 
+This verification is left as an exercise for the reader.
+
+Since
+
+$$
+\chi_h(g) = e^{2 \pi i h / \varphi(p^\alpha)}
+$$
+
+the characters $\chi_0, \chi_1, \ldots, \chi_{\varphi(p^\alpha)-1}$ are distinct because they take distinct values at 
+$g$. Therefore, since there are $\varphi(p^\alpha)$ such functions they represent all the Dirichlet characters mod 
+$p^\alpha$. The same construction works for the modulus $2^\alpha$ if $\alpha = 1$ or $\alpha = 2$, using $g = 3$ as 
+the primitive root.
+
+Now if $m = p_1^{\alpha_1} \cdots p_r^{\alpha_r}$ where the $p_i$ are distinct odd primes, and if $\chi_i$  is a 
+Dirichlet character mod $p_i^{\alpha_i}$, then the product $\chi = \chi_1 \cdots \chi_r$ is a Dirichlet character mod 
+$m$. Since $\varphi(m) = \varphi(p_i^{\alpha_i}) \cdots \varphi(p_r^{\alpha_r})$ we get $\varphi(m)$ such characters as 
+each $\chi_i$ runs through the $\varphi(p_i^{\alpha_i})$ characters mod $p_i^{\alpha_i}$. Thus we have explicitly 
+constructed all characters mod $m$ for every odd modulus $m$.
+
+If $\alpha \ge 3$ the modulus $2^\alpha$ has no primitive root and a slightly different construction is needed to 
+obtain the characters mod $2^\alpha$. The following theorem shows that $5$ is a good substitute for a primitive root 
+mod $2^\alpha$.
+
 ## 10.12 Real-valued Dirichlet characters mod $p^\alpha$
 
 ## 10.13 Primitive Dirichlet characters mod $p^\alpha$
