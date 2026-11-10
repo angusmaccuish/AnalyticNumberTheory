@@ -515,6 +515,162 @@ primitive root mod $p$. Table 10.1 lists $g(p)$ for all odd primes $p \lt 1000$.
 
 ## 10.10 The index calculus
 
+If $m$ has a primitive root $g$ the numbers $1,g,g^2,\ldots,g^{\varphi(m)-1}$ form a reduced residue system mod $m$. If 
+$(a,m) = 1$ there is a unique integer $k$ in the interval $0 \le k \le \varphi(m)-1$ such that 
+
+$$
+a \equiv g^k \pmod{m}
+$$
+
+This integer is called the *index* of $a$ to the base $g \pmod{m}$, and we write 
+
+$$
+k = \text{ind}_g(a)
+$$
+
+or simply $k = \text{ind} \: a$ if the base $g$ is understood.
+
+The following theorem shows that indices have properties analogous to those of logarithms. The proof is left as an 
+exercise for the reader. 
+
+**Theorem 10.10**  Let $g$ be a primitive root mod $m$. If $(a,m) = (b,m) = 1$ we have:
+
+(a) $\text{ind}(ab) = \text{ind} \: a + \text{ind} \: b \pmod{\varphi(m)}$  
+(b) $\text{ind} \: a^n = n \: \text{ind} \: a \pmod{\varphi(m)} \text{ if } n \ge 1$  
+(c) $\text{ind} \: 1 = 0 \text{ and } \text{ind} \: g = 1$  
+(d) $\text{ind}(-1) = \varphi(m)/2 \text{ if } m \gt 2$  
+(e) If $g'$ is also a primitive root mod $m$ then
+
+$$
+\text{ind}_g \: a \equiv \text{ind}_{g'} \: a \cdot \text{ind}_g \: g' \pmod{\varphi(m)}
+$$
+
+Table 10.2 on pp. 216-217 lists indices for all numbers $a \not \equiv 0 \pmod{p}$ and all odd primes $p \lt 50$. The 
+base $g$ is the smallest primitive root of $p$. 
+
+The following examples illustrate the use of indices in solving congruences. 
+
+EXAMPLE 1  Linear congruences. Assume $m$ has a primitive root and let $(a,m) = (b,m) = 1$. Then the linear congruence 
+
+$$
+ax \equiv b \pmod{m} \qquad(14)
+$$
+
+is equivalent to the congruence
+
+$$
+\text{ind} \: a + \text{ind} \: x \equiv \text{ind} \: b \pmod{\varphi(m)}
+$$
+
+so the unique solution of (14) satisfies the congruence
+
+$$
+\text{ind} \: x \equiv \text{ind} \: b - \text{ind} \: a \pmod{\varphi(m)}
+$$
+
+To treat a numerical example, consider the linear congruence
+
+$$
+9x \equiv 13 \pmod{47}
+$$
+
+The corresponding index relation is
+
+$$
+\text{ind} \: x \equiv \text{ind} \: 13 - \text{ind} \: 9 \pmod{46}
+$$
+
+From Table 10.2 we find $\text{ind} \: 13 = 11$ and $\text{ind} \: 9 = 40$ (for $p = 47$), so
+
+$$
+\text{ind} \: x \equiv 11 - 40 \equiv -29 \equiv 17 \pmod{46}
+$$
+
+Again from Table 10.2 we find $x \equiv 38 \pmod{47}$.
+
+EXAMPLE 2 Binomial congruences. A congruence of the form
+
+$$
+x^n \equiv a \pmod{m}
+$$
+
+is called a binomial congruence. If $m$ has a primitive root and if $(a,m) = 1$ this is equivalent to the congruence
+
+$$
+n \: \text{ind} \: x \equiv \text{ind} \: a \pmod{\varphi(m)}
+$$
+
+which is linear in the unknown $\text{ind} \: x$. As such, it has a solution if, and only if, $\text{ind} \: a$ is 
+divisible by $d = (n,\varphi(m))$, in which case it has exactly $d$ solutions.
+
+To illustrate with a numerical example, consider the binomial congruence
+
+$$
+x^8 \equiv a \pmod{17} \qquad(15)
+$$
+
+The corresponding index relation is 
+
+$$
+8 \: \text{ind} \: x \equiv \text{ind} \: a \pmod{16} \qquad(16)
+$$
+
+In this example $d = (8,16) = 8$. Table 10.2 shows that $1$ and $16$ are the only numbers mod $17$ whose index is 
+divisible by $8$. In fact, $\text{ind} \: 1 = 0$ and $\text{ind} \: 16 = 8$. Hence (15) has no solutions if 
+$a \not \equiv 1$ or $a \not \equiv 16 \pmod{17}$
+
+For $a = 1$ congruence (16) becomes
+
+$$
+8 \: \text{ind} \: x \equiv 0 \pmod{16} \qquad(17)
+$$
+
+and for $a = 16$ it becomes 
+
+$$
+8 \: \text{ind} \: x \equiv 8 \pmod{16} \qquad(18)
+$$
+
+Each of these has exactly eight solutions mod $16$. The solutions of (17) are those $x$ whose index is even, 
+
+$$
+x \equiv 1, 2, 4, 8, 9, 13, 15, 16 \pmod{17} 
+$$
+
+These, of course, are the quadratic residues of $17$. The solutions of (18) are those $x$ whose index is odd, the 
+quadratic nonresidues of $17$, 
+
+$$
+x \equiv 3, 5, 6, 7, 10, 11, 12, 14 \pmod{17}
+$$
+
+EXAMPLE 3 Exponential congruences. An exponential congruence is one of the form 
+
+$$
+a^x \equiv b \pmod{m}
+$$
+
+If $m$ has a primitive root and if $(a,m) = (b,m) = 1$ this is equivalent to the linear congruence
+
+$$
+x \: \text{ind} \: a \equiv \text{ind} \: b \pmod{\varphi(m)} \qquad(19)
+$$
+
+Let $d = (\text{ind} \: a,\varphi(m))$. Then (19) has a solution if, and only if, $d|\text{ind} \: b$, in which case 
+there are exactly $d$ solutions. In the numerical example
+
+$$
+25^x \equiv 17 \pmod{47} \qquad(20)
+$$
+
+we have $\text{ind} \: 25 = 2$, $\text{ind} \: 17 = 16$, and $d = (2,46) = 2$. Therefore (19) becomes 
+
+$$
+2x \equiv 16 \pmod{46}
+$$
+
+with two solutions, $x \equiv 8 \text{ and } 31 \pmod{46}$. These are also the solutions of (20) mod $47$.
+
 ## 10.11 Primitive roots and Dirichlet characters
 
 ## 10.12 Real-valued Dirichlet characters mod $p^\alpha$
