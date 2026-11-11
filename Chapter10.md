@@ -687,10 +687,10 @@ $$
 For $h = 0, 1, 2, \ldots, \varphi(p^\alpha)-1$, define $\chi_h$ by the relations
 
 $$
-(21) \qquad \chi_h(n) = 
+\chi_h(n) = 
   \begin{cases}
-    e^{2 \pi i h b(n) / \varphi(p^\alpha)} & \text{ if } p \nmid n \\
-    0                                    & \text{ if } n|p
+    e^{2 \pi i h b(n) / \varphi(p^\alpha)} & \text{ if } p \nmid n \qquad(21)\\
+    0                                      & \text{ if } n|p
   \end{cases}
 $$
 
@@ -718,6 +718,83 @@ constructed all characters mod $m$ for every odd modulus $m$.
 If $\alpha \ge 3$ the modulus $2^\alpha$ has no primitive root and a slightly different construction is needed to 
 obtain the characters mod $2^\alpha$. The following theorem shows that $5$ is a good substitute for a primitive root 
 mod $2^\alpha$.
+
+**Theorem 10.11** Assume $\alpha \ge 3$. Then for every odd integer $n$ there is a uniquely determined integer $b(n)$ 
+such that
+
+$$
+n \equiv (-1)^{(n-1)/2} 5^{b(n)} \pmod{2^\alpha} \qquad \text{ with } 1 \le b(n) \le \varphi(2^\alpha)/2
+$$
+
+PROOF. Let $f = \exp_{2^\alpha}(5)$ so that $5^f \equiv 1 \pmod{2^\alpha}$. We will show that 
+$f = \varphi(2^\alpha)/2$. Now $f | \varphi(2^\alpha) = 2^{\alpha-1}$, so $f = 2^\beta$ for some $\beta \le \alpha-1$. 
+From Theorem 10.8 we know that 
+
+$$
+5^{\varphi(2^\alpha)/2} \equiv 1 \pmod{2^\alpha}
+$$
+
+hence $f \le \varphi(2^\alpha)/2 = 2^{\alpha-2}$. Therefore $\beta \le \alpha-2$. We will show that $\beta = \alpha-2$. 
+
+Raise both members of the equation $5 = 1 + 2^2$ to the $f = 2^\beta$ power to obtain
+
+$$
+5^f = (1 + 2^2)^{2^\beta} = 1 + 2^{\beta+2} + r 2^{\beta+3} = 1 + 2^{\beta+2} = 1 + 2^{\beta+2}(1+2r)
+$$
+
+where $r$ is an integer. Hence $5^f - 1 = 2^{\beta+2}t$ where $t$ is odd. But $2^\alpha | (5^f-1)$ so 
+$\alpha \le \beta+2$, or $\beta \ge \alpha-2$. Hence $\beta = \alpha-2$ and $f = 2^{\alpha-2} = \varphi(2^\alpha)/2$. 
+Therefore the numbers
+
+$$
+5, 5^2, \ldots, 5^f \qquad(22)
+$$
+
+are incongruent mod $2^\alpha$. Also each is $\equiv 1 \pmod{4}$ since $5 \equiv 1 \pmod{4}$. Similarly, the numbers
+
+$$
+-5, -5^2, \ldots, -5^f \qquad(23)
+$$
+
+are incongruent mod $2^\alpha$ and each is $\equiv 3 \pmod{4}$ since $-5 \equiv 3 \pmod{4}$. There are 
+$2f = \varphi(2^\alpha)$ numbers in (22) and (23) together. Moreover, we cannot have $5^a \equiv -5^b \pmod{2^\alpha}$ 
+because this would imply $1 \equiv -1 \pmod{4}$. Hence the numbers in (22) together with those in (23) represent 
+$\varphi(2^\alpha)$ incongruent odd numbers mod $2^\alpha$. Each odd $n \equiv 1 \pmod{4}$ is congruent mod $2^\alpha$ 
+to one of the numbers in (22), and each odd $n \equiv 3 \pmod{4}$ is congruent to one in (23). This proves the theorem.
+
+With the help of Theorem 10.11 we can construct all the characters mod $2^\alpha$ if $\alpha \ge 3$. Let
+
+$$
+f(n) = 
+  \begin{cases}
+    (-1)^{(n-1)/2} & \text{ if } n \text{ is odd } \qquad (24) \\
+    0              & \text{ if } n \text{ is even }
+  \end{cases}
+$$
+
+and let
+
+$$
+g(n) = 
+  \begin{cases}
+    e^{2 \pi i b(n) / 2^{\alpha-2}} & \text{ if } n \text{ is odd } \\
+    0                               & \text{ if } n \text{ is even }
+  \end{cases}
+$$
+
+where $b(n)$ is the integer given by Theorem 10.11. Then it is easy to verify that each of $f$ and $g$ is a character 
+mod $2^\alpha$. So is each product
+
+$$
+\chi_{a,c}(n) = f(n)^a g(n)^c \qquad(25)
+$$
+
+where $a = 1, 2$ and $c = 1, 2, \ldots, \varphi(2^\alpha)/2$. Moreover these $\varphi(2^\alpha)$ characters are 
+distinct so they represent all the characters mod $2^\alpha$.
+
+Now if $m = 2^\alpha Q$ where $Q$ is odd, we form the products $\chi = \chi_1 \chi_2$ where $\chi_1$ runs through the 
+$\varphi(2^\alpha)$ characters mod $2^\alpha$ and $\chi_2$ runs through the $\varphi(Q)$ characters mod $Q$ to obtain 
+all the characters mod $m$.
 
 ## 10.12 Real-valued Dirichlet characters mod $p^\alpha$
 
