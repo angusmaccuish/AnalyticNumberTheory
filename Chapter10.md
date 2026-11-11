@@ -847,3 +847,75 @@ $2^{\alpha-3} | c b(n)$ for all $n$ then $b(n) = 1$ requires $2^{\alpha-3} | c$ 
 since $1 \le c \le 2^{\alpha-2}$. $\square$
 
 ## 10.13 Primitive Dirichlet characters mod $p^\alpha$
+
+In Theorem 8.14 we proved that every nonprincipal character $\chi$ mod $p$ is primitive if $p$ is prime. Now we 
+determine all the primitive Dirichlet characters mod $p^\alpha$.
+
+We recall (Section 8.7) that $\chi$ is primitive mod $k$ if, and only if, $\chi$ has no induced modulus $d \lt k$. An 
+induced modulus is a divisor $d$ of $k$ such that
+
+$$
+\chi(n) = 1 \qquad \text{ whenever } (n,k) = 1 \text{ and } n \equiv 1 \pmod{d}
+$$
+
+If $k = p^\alpha$ and $\chi$ is imprimitive mod $p^\alpha$ then one of the divisors $1, p, \ldots, p^{\alpha-1}$ is an 
+induced modulus, and hence $p^{\alpha-1}$ is an induced modulus. Therefore, $\chi$ is primitive mod $p^\alpha$ if, and 
+only if, $p^{\alpha-1}$ is not an induced modulus for $\chi$.
+
+**Theorem 10.14** For an odd prime $p$ and $\alpha \ge 2$, consider the $\varphi(p^\alpha)$ Dirichlet characters 
+$\chi_h$ mod $p^\alpha$ given by (21). Then $\chi_h$ is primitive mod $p^\alpha$ if, and only if, $p \nmid h$.
+
+PROOF. We will show that $p^{\alpha-1}$ is an induced modulus if, and only if, $p | h$. If $p \nmid n$ we have, by (21),
+
+$$
+\chi_h(n) = e^{2 \pi i h b(n) / \varphi(p^\alpha)}
+$$
+
+where $n \equiv g^{b(n)} \pmod{p^\alpha}$ and $g$ is a primitive root mod $p^\beta$ for all $\beta \ge 1$. Therefore
+
+$$
+g^{b(n)} \equiv n \pmod{p^{\alpha-1}}
+$$
+
+Now if $n \equiv 1 \pmod{p^{\alpha-1}}$ then $g^{b(n)} \equiv 1 \pmod{p^{\alpha-1}}$ and, since $g$ is a primitive root 
+of $p^{\alpha-1}$, we have $\varphi(p^{\alpha-1}) | b(n)$, or 
+
+$$
+b(n) = t \varphi(p^{\alpha-1}) = t \varphi(p^\alpha)/p
+$$
+
+for some integer $t$. Therefore
+
+$$
+\chi_h(n) = e^{2 \pi i h t / p}
+$$
+
+If $p | h$ this equals $1$ and hence $\chi_h$ is imprimitive mod $p^\alpha$. If $p \nmid h$ take 
+$n = 1 + p^{\alpha-1}$. Then $n \equiv 1 \pmod{p^{\alpha-1}}$ but $n \not \equiv 1 \pmod{p^\alpha}$ so 
+$0 \lt b(n) \lt \varphi(p^\alpha)$. Therefore $p \nmid t$, $p \nmid ht$ and $\chi_h(n) \ne 1$. This shows that $\chi_h$ 
+is primitive if $p \nmid h$. $\square$
+
+When $m = 1 \text{ or } 2$, there is only one character $\chi$ mod $m$, the principal character. If $m = 4$ there are 
+two characters mod $4$, the principal character and the primitive character $f$ given by (24). The next theorem 
+describes all the primitive characters mod $2^\alpha$ for $\alpha \ge 3$. The proof is similar to that of Theorem 10.14 
+and is left to the reader.
+
+**Theorem 10.15** If $\alpha \ge 3$, consider the $\varphi(2^\alpha)$ Dirichlet characters $\chi_{a,c}$ mod $2^\alpha$ 
+given by (25). Then $\chi_{a,c}$ is primitive mod $2^\alpha$ if, and only if, $c$ is odd.
+
+The foregoing results describe all primitive characters mod $p^\alpha$ for all prime powers. To determine the primitive 
+characters for a composite modulus $k$ we write
+
+$$
+k = p_1^{\alpha_1} \cdots p_r^{\alpha_r}
+$$
+
+Then every character $\chi$ mod $k$ can be factored in the form 
+
+$$
+\chi = \chi_1 \cdots \chi_r
+$$
+
+where each $\chi_i$ is a character mod $p_i^{\alpha_i}$. Moreover, by Exercise 8.12, $\chi$ is primitive mod $k$ if, 
+and only if, each $\chi_i$ is primitive mod $p_i^{\alpha_i}$. Therefore we have a complete description of all primitive 
+characters mod $k$.
