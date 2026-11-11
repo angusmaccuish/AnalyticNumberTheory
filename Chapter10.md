@@ -761,6 +761,7 @@ $2f = \varphi(2^\alpha)$ numbers in (22) and (23) together. Moreover, we cannot 
 because this would imply $1 \equiv -1 \pmod{4}$. Hence the numbers in (22) together with those in (23) represent 
 $\varphi(2^\alpha)$ incongruent odd numbers mod $2^\alpha$. Each odd $n \equiv 1 \pmod{4}$ is congruent mod $2^\alpha$ 
 to one of the numbers in (22), and each odd $n \equiv 3 \pmod{4}$ is congruent to one in (23). This proves the theorem.
+$\square$
 
 With the help of Theorem 10.11 we can construct all the characters mod $2^\alpha$ if $\alpha \ge 3$. Let
 
@@ -797,5 +798,52 @@ $\varphi(2^\alpha)$ characters mod $2^\alpha$ and $\chi_2$ runs through the $\va
 all the characters mod $m$.
 
 ## 10.12 Real-valued Dirichlet characters mod $p^\alpha$
+
+If $\chi$ is a real-valued Dirichlet character mod $m$ and $(n,m) = 1$, the number $\chi(n)$ is both a root of unity 
+and real, so $\chi(n) = \pm 1$. From the construction in the foregoing section we can determine all real Dirichlet 
+characters mod $p^\alpha$.
+
+**Theorem 10.12** For an odd prime $p$ and $\alpha \ge 1$, consider the $\varphi(p^\alpha)$ Dirichlet characters 
+$\chi_h$ mod $p^\alpha$ given by (21). Then $\chi_h$ is real if, and only if, $h = 0$ or $h = \varphi(p^\alpha)/2$. 
+Hence there are exactly two real characters mod $p^\alpha$.
+
+PROOF. We have $e^{\pi i z} = \pm 1$ if, and only if, $z$ is an integer. If $p \nmid n$ we have 
+
+$$
+\chi_h(n) = e^{2 \pi i h b(n) / \varphi(p^\alpha)}
+$$
+
+so $\chi_h(n) = \pm 1$ if, and only if, $\varphi(p^\alpha) | 2 h b(n)$. This condition is satisfied for all $n$ if 
+$h = 0$ or if $h = \varphi(p^\alpha)/2$. Conversely, if $\varphi(p^\alpha) | 2 h b(n)$ for all $n$ then when $b(n) = 1$ 
+we have $\varphi(p^\alpha) | 2h$ or $\varphi(p^\alpha)/2 | h$. Hence $h = 0$ or $h = \varphi(p^\alpha)/2$ since these 
+are the only multiples of $\varphi(p^\alpha)/2$ less than $\varphi(p^\alpha)$. $\square$
+
+*Note*. The character corresponding to $h = 0$ is the principal character. When $\alpha = 1$ the quadratic character 
+$\chi(n) = (n|p)$ is the only other real character mod $p$.
+
+For the moduli $m = 1, 2 \text{ and } 4$, all the Dirichlet characters are real. The next theorem describes the real 
+characters mod $2^\alpha$ when $\alpha \ge 3$.
+
+**Theorem 10.13** If $\alpha \ge 3$, consider the $\varphi(2^\alpha)$ Dirichlet characters $\chi_{a,c}$ mod $2^\alpha$ 
+given by (25). Then $\chi_{a,c}$ is real if, and only if, $c = \varphi(2^\alpha)/2$ or $c = \varphi(2^\alpha)/4$. Hence 
+there are exactly four real characters mod $2^\alpha$ if $\alpha \ge 3$.
+
+PROOF. If $\alpha \ge 3$ and $n$ is odd we have, by (25),
+
+$$
+\chi_{a,c}(n) = f(n)^a g(n)^c
+$$
+
+where $f(n) = \pm 1$ and 
+
+$$
+g(n)^c = e^{2 \pi i c b(n)/2^{\alpha-2}}
+$$
+
+with $1 \le c \le 2^{\alpha-2}$. This is $\pm 1$ if, and only if, $2^{\alpha-2} | 2 c b(n)$, or 
+$2^{\alpha-3} | c b(n)$. Since $\varphi(2^\alpha) = 2^{\alpha-1}$ this condition is satisfied if 
+$c = \varphi(2^\alpha)/2 = 2^{\alpha-2}$ or if $c = \varphi(2^\alpha)/4 = 2^{\alpha-3}$. Conversely, if 
+$2^{\alpha-3} | c b(n)$ for all $n$ then $b(n) = 1$ requires $2^{\alpha-3} | c$ so $c = 2^{\alpha-3}$ or $2^{\alpha-2}$ 
+since $1 \le c \le 2^{\alpha-2}$. $\square$
 
 ## 10.13 Primitive Dirichlet characters mod $p^\alpha$
